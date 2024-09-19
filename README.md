@@ -2,6 +2,9 @@ ___
 # POSTGRADUATE STUDENT MANAGEMENT SYSTEM
 ___
 
+The Post Graduate Students management system is an effort to enhance the administrative efficiency and academic tracking within the Department of Computer Engineering at University of Peradeniya.
+
+
 ## Team:
 
 E/20/197,  A.H.D. Kawya,           e20197@eng.pdn.ac.lk <br>
