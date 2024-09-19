@@ -1,7 +1,10 @@
 ___
-# DELETE THIS INSTRUCTIONS AND ADD A SHORT INTRODUCTION ABOUT YOUR PROJECT
+# POSTGRADUATE STUDENT MANAGEMENT SYSTEM
 ___
 
-## Please refer the instructions in below URL:
+## Team:
 
-https://projects.ce.pdn.ac.lk/docs/how-to-add-a-project
+E/20/197,  A.H.D. Kawya,           e20197@eng.pdn.ac.lk
+E/20/211,  K.W.I.T. Kumarasinghe,  e20211@eng.pdn.ac.lk
+E/20/212,  R.M.S.H. Kumarasinghe,  e20212@eng.pdn.ac.lk
+E/20/242,  G.A.I. Malinga,         e20242@eng.pdn.ac.lk
