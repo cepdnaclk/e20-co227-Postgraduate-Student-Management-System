@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF File</title>
+</head>
+<body>
+<h1>Upload PDF File</h1>
+<form method="POST" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" accept="application/pdf"/>
+    <button type="submit">Upload</button>
+</form>
+<div>
+    <p th:text="${message}"></p>
+</div>
+</body>
+</html>

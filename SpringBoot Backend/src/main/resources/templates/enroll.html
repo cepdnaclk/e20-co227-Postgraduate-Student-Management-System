@@ -1,0 +1,222 @@
+<!--Start of Header-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>PostGraduate Student Management System</title>
+
+    <!-- Including CSS file -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!-- Including jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Including External script file -->
+    <script src="/js/index.js" defer></script>
+
+</head>
+
+<body style="margin: 0%; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">
+
+<!-- Navigation bar -->
+<div class = "navbars">
+    <ul class="topnav">
+        <li><a class="active" href="/welcome">Home1</a></li>
+        <li><a class="right" href="/home">Home2</a></li>
+        <li class="right"><a href="/login">Login</a></li>
+        <li class="right"><a href="/enroll">Enroll</a></li>
+    </ul>
+</div>
+
+
+<!--Start of the main content -->
+<div class = "main" style="margin-top: 45px;">
+
+    <!-- Second Navigation Bar -->
+    <div class="navbar" style="background-color: #666666;">
+        <img src="https://i.ibb.co/9hRdFVt/cropped-web-front-page-logo.png" alt="PGSMS" width="50px" height="50px" style="margin-left: 10px;">
+
+        <div class="dropdown" style="margin-left: 400px;">
+            <button class="dropbtn">Computer Engineering
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Facilities</a>
+                <a href="#link2">Specializations</a>
+                <a href="#link3">About</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Postgraduate Studies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Researches</a>
+                <a href="#link2">Research Facilities</a>
+                <a href="#link3">Procedure</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Centers & Units
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Computer Engineering Department</a>
+                <a href="#link2">Center for Engineering Research</a>
+                <a href="#link3">Computing Centre</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Department & Staff
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Student Help guide</a>
+                <a href="#link2">Department ADPC</a>
+                <a href="#link3">IQAC</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start of Whole Container -->
+<div class="wholeContainer">
+    <div class="sidebar-left">
+        <h3 style="color: #400752; margin-top: 0px;">Main Topics</h3>
+        <ul>
+            <li><a href="#topic1">Topic 1</a></li>
+            <li><a href="#topic2">Topic 2</a></li>
+            <li><a href="#topic3">Topic 3</a></li>
+            <li><a href="#topic4">Topic 4</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Start of Main Content -->
+    <div class="contentMainBeforeLogin" id="mainContent">
+
+        <button class="toggle-btn" id="showSidebarBtn" style="display: none;"><<</button>
+        <!--End of Header-->
+
+
+
+
+        <!--Start of the main content-->
+        <img src="https://i.ibb.co/ZxJ90GH/Screenshot-2024-06-08-135710.png" alt="Students" style="width:100%;">
+
+        <div class="form-container">
+            <form action="/enroll" method="post" enctype="multipart/form-data">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>Name with Initials</td>
+                        <td><input type="text" name="nameWithInitials" placeholder="Your Name..."></td>
+                    </tr>
+                    <tr>
+                        <td>Full Name</td>
+                        <td><input type="text" name="fullName" placeholder="Your Full Name..."></td>
+                    </tr>
+                    <tr>
+                        <td>Contact Number</td>
+                        <td><input type="tel" name="contactNumber" placeholder="Contact Number..."></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" name="email" placeholder="Email Address..."></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><textarea name="address" rows="4"></textarea></td>
+                    </tr>
+                    <br>
+                </table>
+                <br>
+                <hr>
+
+                <h3>Educational/Professional Qualifications</h3>
+
+                <div id="form-sections-container">
+                    <div class="form-section" id="original-form-section">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>University / Institute</td>
+                                <td><input type="text" name="university" placeholder="University..."></td>
+                            </tr>
+                            <tr>
+                                <td>From</td>
+                                <td><input type="text" name="fromDate" placeholder="From..."></td>
+                            </tr>
+                            <tr>
+                                <td>To</td>
+                                <td><input type="text" name="toDate" placeholder="To..."></td>
+                            </tr>
+                            <tr>
+                                <td>Degree</td>
+                                <td><input type="text" name="degree" placeholder="Degree..."></td>
+                            </tr>
+                            <tr>
+                                <td>Field</td>
+                                <td><input type="text" name="field" placeholder="Field..."></td>
+                            </tr>
+                            <tr>
+                                <td>Class/Pass</td>
+                                <td><input type="text" name="classPass" placeholder="Class..."></td>
+                            </tr>
+                        </table>
+                        <br>
+                        Attach Files: <input  type="file" name="attachment">
+                        <br><br>
+                    </div>
+                </div>
+
+                <button type="button" id="add-section">Add Section</button>
+                <button type="button" id="remove-section" style="display:none;">--</button>
+
+                <hr>
+
+                <h3>List of Publications</h3>
+                <textarea name="publications" rows="4" style="width: 100%;"></textarea>
+
+                <br><br><hr>
+                <h3>Proposed Program of Study</h3>
+                <select name="programOfStudy">
+                    <option value="PhD">PhD</option>
+                    <option value="MPhil">MPhil</option>
+                    <option value="program1">Program 1</option>
+                    <option value="program2">Program 2</option>
+
+                </select>
+
+                <br><br><hr><br><br>
+                <input type="submit" value="Submit" onclick="Alert()"><br><br>
+            </form>
+        </div>
+
+
+        <!-- End of the main content -->
+
+        <!--Start of Footer -->
+    </div>
+</div>
+
+<br>
+<footer style="background-color: #666666;">
+    <br>
+    <br>
+    <p>Department of Computer Engineering, Faculty of Engineering, University of Peradeniya, Sri Lanka<br>
+        <a href="https://feels.pdn.ac.lk">feels.pdn.ac.lk</a></p>
+    <br>
+    <br>
+    <br>
+</footer>
+
+<!--End of Footer-->
+
+</body>
+</html>

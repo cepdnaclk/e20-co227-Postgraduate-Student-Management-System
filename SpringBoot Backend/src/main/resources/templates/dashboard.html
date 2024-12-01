@@ -1,0 +1,196 @@
+<!--Start of HeaderAfterLogin-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>PostGraduate Student Management System</title>
+
+    <!-- Including CSS file -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!-- Including jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Including External script file -->
+    <script src="/js/index.js" defer></script>
+
+    <!-- Calendar -->
+    <link rel="stylesheet" href="/css/evo-calendar.min.css">
+    <link rel="stylesheet" href="/css/evo-calendar.royal-navy.css">
+    <link rel="stylesheet" href="/css/evo-calendar.royal-navy.min.css">
+
+    <!-- Calendar Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="/js/evo-calendar.min.js"></script>
+
+</head>
+
+<body style="margin: 0%; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">
+
+<!-- Navigation bar -->
+<div class = "navbars">
+    <ul class="topnav">
+        <li><a class="active" href="/welcome">Home</a></li>
+        <li><a class="right" href="/dashboard">Dashboard</a></li>
+        <li class="right"><a href="/login">Log Out</a></li>
+        <li class="right"><a href="/enroll">Enroll</a></li>
+        <li class="right">
+            <img src="https://i.ibb.co/DwThLns/Notification-image.png" alt="Notification" id="notificationButton" class="notifyImage" height="20px" width="auto">
+        </li>
+    </ul>
+</div>
+
+<!-- Notification Panel -->
+<div id="notificationPanel" class="notification-panel">
+    <h4 style="text-align: center; color:#400752; margin:0px">Notifications</h4>
+    <hr>
+    <p>You have new notifications!</p>
+    <p>You have new notifications2!</p>
+    <p>You have new notifications3!</p>
+    <!-- Add your notifications here -->
+</div>
+
+<!--Start of the main content -->
+<div class = "main" style="margin-top: 45px;">
+
+    <!-- Second Navigation Bar -->
+    <div class="navbar" style="background-color: #666666;">
+        <img src="https://i.ibb.co/9hRdFVt/cropped-web-front-page-logo.png" alt="PGSMS" width="50px" height="50px" style="margin-left: 10px;">
+
+        <div class="dropdown" style="margin-left: 400px;">
+            <button class="dropbtn">Computer Engineering
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Facilities</a>
+                <a href="#link2">Specializations</a>
+                <a href="#link3">About</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Postgraduate Studies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Researches</a>
+                <a href="#link2">Research Facilities</a>
+                <a href="#link3">Procedure</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Centers & Units
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Computer Engineering Department</a>
+                <a href="#link2">Center for Engineering Research</a>
+                <a href="#link3">Computing Centre</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Department & Staff
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Student Help guide</a>
+                <a href="#link2">Department ADPC</a>
+                <a href="#link3">IQAC</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start of Whole Container -->
+<div class="wholeContainer">
+    <div class="sidebar-left">
+        <h3 style="color: #400752; margin-top: 0px;">Main Topics</h3>
+        <ul>
+            <li><a href="#topic1">Topic 1</a></li>
+            <li><a href="#topic2">Topic 2</a></li>
+            <li><a href="#topic3">Topic 3</a></li>
+            <li><a href="#topic4">Topic 4</a></li>
+        </ul>
+    </div>
+
+    <!-- Start of Right Sidebar -->
+    <div class="sidebar-right" id="rightSidebar">
+        <button class="toggle-btn" id="hideSidebarBtn">X</button>
+        <h3 style="color: #400752; margin-top: 0px;">Research</h3>
+        <ul>
+            <li><a href="#topic1">Topic 1</a></li>
+            <li><a href="#topic2">Topic 2</a></li>
+            <li><a href="#topic3">Topic 3</a></li>
+            <li><a href="#topic4">Topic 4</a></li>
+        </ul>
+
+        <!-- Calendar in the Right Sidebar -->
+        <h3 style="color: #400752; margin-top: 0px;">Calender</h3>
+        <!-- <iframe src="https://calendar.google.com/calendar/embed?src=thathsaraishan%40gmail.com&ctz=Asia%2FColombo&hl=en&showTitle=0&showDate=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH" style="border: 0" width="100%" height="200" frameborder="0" scrolling="no"></iframe> -->
+        <div class="hero-sidebar">
+            <div id="sidebar-calendar"></div>
+        </div>
+
+        <br>
+        <br>
+        <h3 style="color: #400752; margin-top: 0px;">External Links</h3>
+    </div>
+
+    <!-- Start of Main Content -->
+    <div class="contentMain" id="mainContent">
+
+        <button class="toggle-btn" id="showSidebarBtn" style="display: none;"><<</button>
+        <!--End of HeaderAfterLogin-->
+
+        <!--Start of the main content-->
+
+        <dev class="topic">
+            <h1>Dashboard</h1>
+        </dev>
+        <br>
+        <!--<center><button type="button" onclick="window.location.href='RegisteredStudents.php';">Registered Students</button></center>-->
+        <br>
+
+        <!-- Registered Students Button -->
+        <div class="enroll-button-container">
+            <a href="/enrolledstu" class="enroll-button">Registered Students</a>
+        </div>
+        <br>
+
+        <h2>Courses</h2>
+
+        <br>
+
+        <!-- Calendar in Dashboard -->
+        <h2>Calender</h2>
+        <div class="hero">
+            <div id="main-calendar"></div>
+        </div>
+
+        <!-- End of the main content -->
+
+        <!--Start of Footer -->
+    </div>
+</div>
+
+<br>
+<footer style="background-color: #666666;">
+    <br>
+    <br>
+    <p>Department of Computer Engineering, Faculty of Engineering, University of Peradeniya, Sri Lanka<br>
+        <a href="https://feels.pdn.ac.lk">feels.pdn.ac.lk</a></p>
+    <br>
+    <br>
+    <br>
+</footer>
+
+<!--End of Footer-->
+
+</body>
+</html>

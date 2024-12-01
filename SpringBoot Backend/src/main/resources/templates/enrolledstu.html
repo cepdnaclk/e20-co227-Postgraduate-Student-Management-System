@@ -1,0 +1,300 @@
+<!--Start of HeaderAfterLogin-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>PostGraduate Student Management System</title>
+
+    <!-- Including CSS file -->
+    <link rel="stylesheet" href="/css/index.css">
+
+    <!-- Including jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Including External script file -->
+    <script src="/js/index.js" defer></script>
+
+    <!-- Calendar -->
+    <link rel="stylesheet" href="/css/evo-calendar.min.css">
+    <link rel="stylesheet" href="/css/evo-calendar.royal-navy.css">
+    <link rel="stylesheet" href="/css/evo-calendar.royal-navy.min.css">
+
+    <!-- Calendar Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="/js/evo-calendar.min.js"></script>
+
+</head>
+
+<body style="margin: 0%; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">
+
+<!-- Navigation bar -->
+<div class = "navbars">
+    <ul class="topnav">
+        <li><a class="active" href="/welcome">Home</a></li>
+        <li><a class="right" href="/dashboard">Dashboard</a></li>
+        <li class="right"><a href="/login">Log Out</a></li>
+        <li class="right"><a href="/enroll">Enroll</a></li>
+        <li class="right">
+            <img src="https://i.ibb.co/DwThLns/Notification-image.png" alt="Notification" id="notificationButton" class="notifyImage" height="20px" width="auto">
+        </li>
+    </ul>
+</div>
+
+<!-- Notification Panel -->
+<div id="notificationPanel" class="notification-panel">
+    <h4 style="text-align: center; color:#400752; margin:0px">Notifications</h4>
+    <hr>
+    <p>You have new notifications!</p>
+    <p>You have new notifications2!</p>
+    <p>You have new notifications3!</p>
+    <!-- Add your notifications here -->
+</div>
+
+<!--Start of the main content -->
+<div class = "main" style="margin-top: 45px;">
+
+    <!-- Second Navigation Bar -->
+    <div class="navbar" style="background-color: #666666;">
+        <img src="https://i.ibb.co/9hRdFVt/cropped-web-front-page-logo.png" alt="PGSMS" width="50px" height="50px" style="margin-left: 10px;">
+
+        <div class="dropdown" style="margin-left: 400px;">
+            <button class="dropbtn">Computer Engineering
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Facilities</a>
+                <a href="#link2">Specializations</a>
+                <a href="#link3">About</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Postgraduate Studies
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Researches</a>
+                <a href="#link2">Research Facilities</a>
+                <a href="#link3">Procedure</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Centers & Units
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Computer Engineering Department</a>
+                <a href="#link2">Center for Engineering Research</a>
+                <a href="#link3">Computing Centre</a>
+            </div>
+        </div>
+
+        <div class="dropdown" >
+            <button class="dropbtn">Department & Staff
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#link1">Student Help guide</a>
+                <a href="#link2">Department ADPC</a>
+                <a href="#link3">IQAC</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start of Whole Container -->
+<div class="wholeContainer">
+    <div class="sidebar-left">
+        <h3 style="color: #400752; margin-top: 0px;">Main Topics</h3>
+        <ul>
+            <li><a href="#topic1">Topic 1</a></li>
+            <li><a href="#topic2">Topic 2</a></li>
+            <li><a href="#topic3">Topic 3</a></li>
+            <li><a href="#topic4">Topic 4</a></li>
+        </ul>
+    </div>
+
+    <!-- Start of Right Sidebar -->
+    <div class="sidebar-right" id="rightSidebar">
+        <button class="toggle-btn" id="hideSidebarBtn">X</button>
+        <h3 style="color: #400752; margin-top: 0px;">Research</h3>
+        <ul>
+            <li><a href="#topic1">Topic 1</a></li>
+            <li><a href="#topic2">Topic 2</a></li>
+            <li><a href="#topic3">Topic 3</a></li>
+            <li><a href="#topic4">Topic 4</a></li>
+        </ul>
+
+        <!-- Calendar in the Right Sidebar -->
+        <h3 style="color: #400752; margin-top: 0px;">Calender</h3>
+        <!-- <iframe src="https://calendar.google.com/calendar/embed?src=thathsaraishan%40gmail.com&ctz=Asia%2FColombo&hl=en&showTitle=0&showDate=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH" style="border: 0" width="100%" height="200" frameborder="0" scrolling="no"></iframe> -->
+        <div class="hero-sidebar">
+            <div id="sidebar-calendar"></div>
+        </div>
+
+        <br>
+        <br>
+        <h3 style="color: #400752; margin-top: 0px;">External Links</h3>
+    </div>
+
+    <!-- Start of Main Content -->
+    <div class="contentMain" id="mainContent">
+
+        <button class="toggle-btn" id="showSidebarBtn" style="display: none;"><<</button>
+        <!--End of HeaderAfterLogin-->
+
+        <!--Start of the main content-->
+
+
+        <div class="topic">
+            <h1>Registered Students</h1>
+        </div>
+
+        <div class = "RegisteredTable">
+            <table>
+                <thead>
+                <tr>
+                    <th colspan="6">Student Details</th>
+                    <th colspan="6">Educational/ Professional Qualifications</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <th>Status</th>
+                    <th>Student ID</th>
+                    <th>Name with Initials</th>
+                    <th>Full Name</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>University/Institute</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Degree</th>
+                    <th>Field</th>
+                    <th>Class/Pass</th>
+                    <th>Attached Files</th>
+                    <th>Publications</th>
+                    <th>Program of Study</th>
+                    <th>Attachment</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <!--                <tr  th:each="student : ${liststudent }">-->
+                <!--                    <td>1</td>-->
+                <!--                    <td>S. Perera</td>-->
+                <!--                    <td>Supun Perera</td>-->
+                <!--                    <td>0111111111</td>-->
+                <!--                    <td>thatjaaafa@gmail.com</td>-->
+                <!--                    <td>Kegalle</td>-->
+                <!--                    <td>University of Peredeniya</td>-->
+                <!--                    <td>2009</td>-->
+                <!--                    <td>2013</td>-->
+                <!--                    <td>Engi</td>-->
+                <!--                    <td>Com</td>-->
+                <!--                    <td>First class</td>-->
+                <!--                    <td>Files</td>-->
+                <!--                    <td>No</td>-->
+                <!--                    <td>PhD</td>-->
+                <!--                </tr>-->
+
+                <tr  th:each="student : ${liststudent }">
+<!--                    <td id="status-cell">-->
+<!--                    <div class="btn-group">-->
+<!--                        <button id="approve-button">Approve</button>-->
+<!--                        <button id="reject-button">Reject</button>-->
+<!--                    </div>-->
+<!--                </td>-->
+
+
+
+<!--                    <td>-->
+<!--            <span th:if="${student.status == 'PENDING'}">-->
+<!--                <button th:onclick="'approveStudent(' + ${student.id} + ')'" >Approve</button>-->
+<!--                <button th:onclick="'rejectStudent(' + ${student.id} + ')'" >Reject</button>-->
+<!--            </span>-->
+<!--                        <span th:if="${student.status == 'APPROVED'}">Approved</span>-->
+<!--                        <span th:if="${student.status == 'REJECTED'}">Rejected</span>-->
+<!--                    </td>-->
+
+
+
+<!--                    <td id="status-cell">-->
+<!--                        <div class="btn-group">-->
+<!--                            <button id="approve-button" data-action="Approved" data-id="1">Approve</button> &lt;!&ndash; Replace 1 with the actual student ID &ndash;&gt;-->
+<!--                            <button id="reject-button" data-action="rejected" data-id="1">Reject</button> &lt;!&ndash; Replace 1 with the actual student ID &ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </td>-->
+
+                    <td id="status-cell">
+                        <div class="btn-group">
+                            <button class="approve-button" th:id="'approve-button-' + ${student.id}"
+                                    th:data-id="${student.id}">Approve</button>
+                            <button class="reject-button" th:id="'reject-button-' + ${student.id}"
+                                    th:data-id="${student.id}">Reject</button>
+                        </div>
+                    </td>
+
+
+                    <td th:text="${student.id}">Student ID</td>
+                    <td th:text="${student.nameWithInitials}">StudentName</td>
+                    <td th:text="${student.fullName}">FullName</td>
+                    <td th:text="${student.contactNumber}">ContactNumber</td>
+                    <td th:text="${student.email}">Email</td>
+                    <td th:text="${student.address}">Address</td>
+                    <td th:text="${student.university}">University</td>
+                    <td th:text="${student.fromDate}">FromDate</td>
+                    <td th:text="${student.toDate}">ToDate</td>
+                    <td th:text="${student.degree}">Degree</td>
+                    <td th:text="${student.field}">Field</td>
+                    <td th:text="${student.classPass}">Class</td>
+                    <td th:text="${student.classPass}">Class</td> <!-- Want to add Attached files here -->
+                    <td th:text="${student.publications}">Publications</td>
+                    <td th:text="${student.programOfStudy}">ProgramOfStudy</td>
+                    <td th:text="${student.attachmentPath}">AttachmentPath</td>
+                    <!--                    <td>-->
+                    <!--                        <a th:href="@{'/edit/' + ${student.id}}">Edit</a>-->
+                    <!--                    </td>-->
+                    <!--                    <td>-->
+                    <!--                        <a th:href="@{'/delete/' + ${student.id}}">Delete</a>-->
+                    <!--                    </td>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br><br><br><br><br>
+        <button id="downloadButton">Download as Excel</button>
+
+
+
+
+        <!-- End of the main content -->
+
+        <!--Start of Footer -->
+    </div>
+</div>
+
+<br>
+<footer style="background-color: #666666;">
+    <br>
+    <br>
+    <p>Department of Computer Engineering, Faculty of Engineering, University of Peradeniya, Sri Lanka<br>
+        <a href="https://feels.pdn.ac.lk">feels.pdn.ac.lk</a></p>
+    <br>
+    <br>
+    <br>
+</footer>
+
+<!--End of Footer-->
+
+</body>
+</html>
