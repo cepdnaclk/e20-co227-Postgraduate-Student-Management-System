@@ -19,16 +19,11 @@ This is a sample image, to show how to add images to your page. To learn more op
 ![Sample Image](./images/sample.png)
  -->
 
-## Team
--  E/20/197, Dasuni Kawya, [email](e20197@eng.pdn.ac.lk)
--  E/20/211, Ishan Kumarasinghe, [email](e20211@eng.pdn.ac.lk)
--  E/20/212, Sameera Kumarasinghe, [email](e20212@eng.pdn.ac.lk)
--  E/20/242, Imesh Malinga, [email](e20242@eng.pdn.ac.lk)
-
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Other Sub Topics](#other-sub-topics)
-3. [Links](#links)
+3. [Team](#team)
+4. [Links](#links)
 
 ---
 
@@ -44,6 +39,12 @@ This is a sample image, to show how to add images to your page. To learn more op
 ## Other Sub Topics
 
 .....
+
+## Team
+-  E/20/197, Dasuni Kawya, [email](e20197@eng.pdn.ac.lk)
+-  E/20/211, Ishan Kumarasinghe, [email](e20211@eng.pdn.ac.lk)
+-  E/20/212, Sameera Kumarasinghe, [email](e20212@eng.pdn.ac.lk)
+-  E/20/242, Imesh Malinga, [email](e20242@eng.pdn.ac.lk)
 
 ## Links
 
