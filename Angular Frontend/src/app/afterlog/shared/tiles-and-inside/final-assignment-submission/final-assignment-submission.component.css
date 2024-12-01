@@ -1,0 +1,189 @@
+.feedback-form{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feedback-form input[type=submit] {
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    float: right;
+    
+}
+.feedback-form input[type=submit]:hover {
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(18, 55, 71, 1));
+}
+.feedback-form input[type=text], input[type=date], input[type=time], textarea {
+    padding: 0px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #dfdfdf;
+}
+
+.feedback-form textarea {
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    background-color: #dfdfdf;
+    resize: none;
+}
+
+/* Many files Upload */
+/* Container Styling */
+.upload-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    padding-top: 0px;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
+    border-radius: 8px;
+    text-align: center;
+}
+  
+/* Drop Zone Styling */
+.drop-zone {
+position: relative;
+border: 2px dashed #cccccc;
+border-radius: 8px;
+padding: 40px;
+background-color: #f9f9f9;
+cursor: pointer;
+transition: background-color 0.3s, border-color 0.3s;
+}
+
+.drop-zone.active {
+background-color: #e9f5ff;
+border-color: #3399ff;
+}
+
+.drop-zone p {
+font-size: 16px;
+color: #666;
+margin: 0;
+}
+
+/* File List Styling */
+.file-list {
+text-align: left;
+margin-top: 20px;
+}
+
+.file-list h5 {
+font-size: 14px;
+color: #333;
+margin-bottom: 10px;
+}
+
+.file-list ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.file-list li {
+display: flex;
+align-items: center;
+padding: 10px 15px;
+border: 1px solid #eee;
+border-radius: 4px;
+margin-bottom: 10px;
+background-color: #fafafa;
+transition: background-color 0.2s;
+}
+
+.file-list li:hover {
+background-color: #f1f1f1;
+}
+
+.file-list i.fa-file {
+font-size: 24px;
+color: #3399ff;
+margin-right: 10px;
+}
+
+.file-list .file-size {
+margin-left: auto;
+color: #999;
+font-size: 14px;
+}
+
+.remove-icon {
+font-size: 18px;
+color: #ff4d4d;
+margin-left: 15px;
+cursor: pointer;
+transition: color 0.2s;
+}
+
+.remove-icon:hover {
+color: #ff0000;
+}
+
+/* Action Buttons */
+.actions {
+margin-top: 20px;
+display: flex;
+justify-content: center;
+gap: 15px;
+}
+
+.upload-btn,
+.clear-btn {
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.upload-btn {
+background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));;
+color: #fff;
+}
+
+.upload-btn:hover {
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(18, 55, 71, 1));
+}
+
+.clear-btn {
+background-color: #dc3545;
+color: #fff;
+}
+
+.clear-btn:hover {
+background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .upload-container {
+        padding: 15px;
+    }
+
+    .drop-zone {
+        padding: 30px;
+    }
+
+    .file-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .file-list .file-size,
+    .remove-icon {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+  

@@ -1,0 +1,49 @@
+button {
+background: none;
+border: none;
+cursor: pointer;
+font-size: 1.2em;
+color: rgb(0, 0, 54);
+display: flex;
+align-items: center;
+}
+
+.arrow-collapsed {
+transition: transform 0.3s ease;
+}
+
+.arrow-expanded {
+transition: transform 0.3s ease;
+}
+
+.collapsible-container {
+    padding: 5px;
+    border: 1.5px solid #ddd;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.content-collapsed, .content-expanded {
+overflow: hidden;
+transition: max-height 1s ease;
+}
+
+.content-collapsed {
+max-height: 0;
+opacity: 0;
+transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.content-expanded {
+max-height: 500px; /* Adjust this value based on the content's maximum height */
+opacity: 1;
+transition: max-height 1s ease, opacity 1s ease;
+}
+  
+.collapsible-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}

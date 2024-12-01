@@ -1,0 +1,21 @@
+<app-top-navigation mode="afterLog"></app-top-navigation>
+
+<div class="main">
+
+    <div class="wholeContainer">
+        
+        <app-sidebar-left mode="afterLog"></app-sidebar-left>
+
+        <div class="right-sidebar">
+            <app-sidebar-right></app-sidebar-right>
+        </div>
+        
+        <div class="middle-content" id="middleContentId">
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+        </div>
+
+    </div>
+
+    
+</div>

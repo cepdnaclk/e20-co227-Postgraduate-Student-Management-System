@@ -1,0 +1,57 @@
+<div class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">            
+            <h5 class="modal-title"><b>New Calendar Event</b></h5>
+            <span class="close" (click)="closeCreateCalendarEvent()">&times;</span>
+        </div><br>
+
+        <div class="modal-form">            
+            <form (ngSubmit)="onSubmit()">
+                <table class="form-tables" style="width: 100%;">
+                    <tr>
+                        <td>Title:</td>
+                        <td><input type="text" name="title" [(ngModel)]="event.name" placeholder="Title..."></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date:</td>
+                        <td><input type="date" name="startDate" [(ngModel)]="event.startDate" placeholder="Start Date..."></td>
+                    </tr>
+                    <tr>
+                        <td>End Date:</td>
+                        <td><input type="date" name="endDate" [(ngModel)]="event.endDate" placeholder="End Date..."></td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td><textarea name="address" [(ngModel)]="event.description" ></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Type:</td>
+                        <td>
+                            <select name="type" [(ngModel)]="event.type" required>
+                                <option value="default">Normal Event</option>
+                                <option value="event">Important Event</option>
+                                <option value="holiday">Holiday</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Color:</td>
+                        <td><input type="text" name="color" [(ngModel)]="event.colour" placeholder="Color..."></td>
+                    </tr> -->
+                    
+                    <!-- <tr>
+                        <td>Every Year:</td>
+                        <td><input type="checkbox" id="option1" name="roles" value="SUPERVISOR" (change)="onCheckboxChange($event)"></td>
+                    </tr> -->
+                    <br>
+                </table>
+
+                <hr>
+                <input type="submit" value="Create" style="width: 40%; float: right;">
+
+            </form>
+        </div>
+
+    </div>
+</div>

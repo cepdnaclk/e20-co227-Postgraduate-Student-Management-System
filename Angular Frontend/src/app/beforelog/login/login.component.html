@@ -1,0 +1,77 @@
+
+<br><br>
+<div class="topic">
+    <h1 class="text-center">Login</h1>
+</div>
+
+
+<div class="login-form">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <table style="width: 100%;">
+            <tr>
+                <td><input type="text" [(ngModel)]="username" name="username" placeholder="Username..." required minlength="3" #usernameInput="ngModel"></td>
+            </tr>
+            <tr>
+                <!-- Error message for username -->
+                <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error-message">
+                    <small *ngIf="usernameInput.errors?.['required']">Username is required.</small>
+                    <small *ngIf="usernameInput.errors?.['minlength']">Username must be at least 4 characters long.</small>
+                </div>
+            </tr>
+            <tr>
+                <div class="password-container">
+                    <input 
+                        [type]="isPasswordVisible ? 'text' : 'password'" 
+                        [(ngModel)]="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password..." 
+                        required 
+                        minlength="6" 
+                        #passwordInput="ngModel"
+                    >
+                    <!-- Eye icon inside the input field -->
+                    <span 
+                        class="toggle-password-icon" 
+                        (mousedown)="showPassword()" 
+                        (mouseup)="hidePassword()" 
+                        (mouseleave)="hidePassword()"
+                        style="cursor: pointer;"
+                        >
+                        <i class="fa fa-eye" style="color: gray;"></i>
+                    </span>
+                </div>
+            </tr>
+            <tr>
+                <!-- Error message for password -->
+                <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error-message">
+                    <small *ngIf="passwordInput.errors?.['required']">Password is required.</small>
+                    <small *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                </div>
+            </tr>
+            
+            <tr>
+                <td><hr></td>
+            </tr>
+                <!-- Error message display -->
+                <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                </div>
+            <tr>
+                <td><input type="submit" value="Login" [disabled]="loginForm.invalid"></td>
+            </tr>
+
+            <tr>
+                <div style="text-align: right;"><button class="btn" style="padding: 0;" (click)="navigateToPasswordChange()">Forgot Password?</button></div>
+            </tr>
+            <!-- <tr>
+                <td><p style="font-family: Arial, Helvetica, sans-serif; font-size:12px;">New Here? <button class="btn" (click)="navigateToSignup()">Sign Up</button>
+                </p></td>
+            </tr> -->
+        </table>
+        
+        <br><br>
+    </form>
+</div>
+<br><br><br><br><br>
+            

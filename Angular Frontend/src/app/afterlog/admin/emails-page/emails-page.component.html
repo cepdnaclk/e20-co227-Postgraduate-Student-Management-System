@@ -1,0 +1,316 @@
+<div class="topic" *ngIf="userRole === 'ADMIN' && emailHeading">
+    <h1>Emails</h1><br>
+</div>
+
+<div class="research-box">
+
+    <!-- Tabs for email options -->
+    <div class="tabs" style="cursor: pointer;" *ngIf="emailHeading">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab1'" (click)="selectTab('tab1')">Send Email</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab2'" (click)="selectTab('tab2')">Add New Template</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab3'" (click)="selectTab('tab3')">Edit Template</a>
+            </li>
+        </ul>
+    </div><br>
+
+    <!-- <div style="display: flex;" *ngIf="emailHeading">
+        <div class="myButtonDesign">
+            <a (click)="sendEmail()" class="my-button" style="margin-left: 40px;">Send Email</a>
+        </div>
+        <div class="myButtonDesign">
+            <a (click)="addNewTemplate()" class="my-button" style="margin-left: 40px;">Add New Template</a>
+        </div>
+        <div class="myButtonDesign">
+            <a (click)="editTemplate()" class="my-button" style="margin-left: 40px;">Edit Templates</a>
+        </div>
+        <br><br>
+    </div> -->
+    
+
+    <!-- Send Email by Admin -->
+    <div *ngIf="mode === 'sendEmail' && varSendEmail">
+        <h6><b>Email Templates</b></h6>    
+
+        <div class="form-container"><form>
+            <select name="emailTemplate" style="width: 50%; border: 1px solid #424242;" [(ngModel)]="selectedTemplateId" (change)="onTemplateChange($event)" required>
+                <option *ngFor="let template of templates" [value]="template.id">{{ template.name }}</option>
+            </select>
+
+        </form></div>
+        <br>
+
+        <h6><b>Template Content</b></h6><br>
+
+        <div class="form-container">
+            <form (submit)="sendEmails()" method="post" >
+                <table style="width: 100%;">
+
+                    <tr>
+                        <td>Email Template Name</td>              
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.name" name="emailHeading" placeholder="Email Heading..." disabled>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Email Address</td>              
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="email"
+                                name="emails"
+                                [(ngModel)]="emailAddresses"
+                                placeholder="Enter emails separated by commas"
+                                required
+                                multiple
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}(,[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})*" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Subject</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.subject" name="emailSubject" placeholder="Email Subject..." required>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td>Additional Content</td>                    
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <quill-editor [(ngModel)]="editorContent" name="editorContent"
+                            [modules]="{
+                                toolbar: [
+                                ['bold', 'italic', 'underline', 'strike'],
+                                [{ 'font': [] }],
+                                [{ 'size': ['small', false, 'large', 'huge'] }],
+                                [{ 'align': [] }],
+                                ['blockquote', 'code-block'],
+                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                                [{ 'indent': '-1'}, { 'indent': '+1' }],
+                                [{ 'color': [] }, { 'background': [] }],
+                                [{ 'script': 'sub'}, { 'script': 'super' }],
+                                ['link', 'formula'],
+                                ['clean']
+                                ]
+                            }"></quill-editor>
+                        </td>
+                    </tr>
+                </table><br>
+            
+                <input type="submit" value="Send Email" style="width: 40%; float: right;">
+            </form>
+            <br><br><br>
+        </div>
+    </div>
+
+    <!-- Send Email to Student -->
+    <div *ngIf="mode === 'sendEmailToStudent'">
+        <h6><b>Use Email Template</b></h6>    
+
+        <div class="form-container"><form>
+            <select name="emailTemplate" style="width: 50%; border: 1px solid #424242;" [(ngModel)]="selectedTemplateId" (change)="onTemplateChange($event)" required>
+                <option *ngFor="let template of templates" [value]="template.id">{{ template.name }}</option>
+            </select>
+
+        </form></div>
+        <br>
+
+        <h6><b>Template Content</b></h6><br>
+
+        <div class="form-container">
+            <form (submit)="sendEmailtoStudent()" method="post" >
+                <table style="width: 100%;">
+
+                    <tr>
+                        <td>Email Template Name</td>              
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.name" name="emailHeading" placeholder="Email Heading..." disabled>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Subject</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.subject" name="emailSubject" placeholder="Email Subject..." required>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td>Additional Content</td>                    
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <quill-editor [(ngModel)]="editorContent" name="editorContent"
+                            [modules]="{
+                                toolbar: [
+                                ['bold', 'italic', 'underline', 'strike'],
+                                [{ 'font': [] }],
+                                [{ 'size': ['small', false, 'large', 'huge'] }],
+                                [{ 'align': [] }],
+                                ['blockquote', 'code-block'],
+                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                                [{ 'indent': '-1'}, { 'indent': '+1' }],
+                                [{ 'color': [] }, { 'background': [] }],
+                                [{ 'script': 'sub'}, { 'script': 'super' }],
+                                ['link', 'formula'],
+                                ['clean']
+                                ]
+                            }"></quill-editor>
+                        </td>
+                    </tr>
+                </table><br>
+            
+                <input type="submit" value="Send Email" style="width: 40%; float: right;">
+            </form>
+            <br><br><br>
+        </div>
+    </div>
+
+    <!-- Add New Template -->
+    <div *ngIf="mode === 'addNewTemplate' || varAddNewTemplate">
+        
+
+        <h6><b>Template Content</b></h6><br>
+
+        <div class="form-container">
+            <form (submit)="onNewTemplateSubmit()" method="post" >
+                <table style="width: 100%;">
+
+                    <tr>
+                        <td>Email Template Name</td>              
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.name" name="emailHeading" placeholder="Email Heading..." required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Subject</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.subject" name="emailSubject" placeholder="Email Subject..." required>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td>Additional Content</td>                    
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <quill-editor [(ngModel)]="editorContent" name="editorContent"
+                            [modules]="{
+                                toolbar: [
+                                ['bold', 'italic', 'underline', 'strike'],
+                                [{ 'font': [] }],
+                                [{ 'size': ['small', false, 'large', 'huge'] }],
+                                [{ 'align': [] }],
+                                ['blockquote', 'code-block'],
+                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                                [{ 'indent': '-1'}, { 'indent': '+1' }],
+                                [{ 'color': [] }, { 'background': [] }],
+                                [{ 'script': 'sub'}, { 'script': 'super' }],
+                                ['link', 'formula'],
+                                ['clean']
+                                ]
+                            }"></quill-editor>
+                        </td>
+                    </tr>
+                </table><br>
+            
+                <input type="submit" value="Add New Template" style="width: 40%; float: right;">
+            </form>
+            <br><br><br>
+        </div>
+    </div>
+
+    <!-- Edit Template -->
+    <div *ngIf="mode === 'editTemplate' || varEditTemplate">
+        <h6><b>Email Templates</b></h6>    
+
+        <div class="form-container"><form>
+            <select name="emailTemplate" style="width: 50%; border: 1px solid #424242;" [(ngModel)]="selectedTemplateId" (change)="onTemplateChange($event)" required>
+                <option *ngFor="let template of templates" [value]="template.id">{{ template.name }}</option>
+            </select>
+
+        </form></div>
+        <br>
+
+        <h6><b>Template Content</b></h6><br>
+
+        <div class="form-container">
+            <form (submit)="onTemplateSubmit()" method="post" >
+                <table style="width: 100%;">
+
+                    <tr>
+                        <td>Email Template Name</td>              
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.name" name="emailHeading" placeholder="Email Heading..." disabled>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Subject</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" [(ngModel)]="selectedTemplate.subject" name="emailSubject" placeholder="Email Subject..." required>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td>Additional Content</td>                    
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <quill-editor [(ngModel)]="editorContent" name="editorContent"
+                            [modules]="{
+                                toolbar: [
+                                ['bold', 'italic', 'underline', 'strike'],
+                                [{ 'font': [] }],
+                                [{ 'size': ['small', false, 'large', 'huge'] }],
+                                [{ 'align': [] }],
+                                ['blockquote', 'code-block'],
+                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                                [{ 'indent': '-1'}, { 'indent': '+1' }],
+                                [{ 'color': [] }, { 'background': [] }],
+                                [{ 'script': 'sub'}, { 'script': 'super' }],
+                                ['link', 'formula'],
+                                ['clean']
+                                ]
+                            }"></quill-editor>
+                        </td>
+                    </tr>
+                </table><br>
+            
+                <input type="submit" value="Edit Template" style="width: 40%; float: right;">
+            </form>
+            <br><br><br>
+        </div>
+        
+        
+    </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="sidebar-left">
+
+  <div style="display: flex;">
+
+    <nav>
+      <div *ngIf="mode === 'beforeLog'">
+        <a [routerLink]="['/beforelog/welcome']">
+          <img src="images/universityLogo.png" alt="PGSMS" width="40px" height="40px">
+        </a>
+      </div>
+
+      <div *ngIf="mode === 'afterLog'">
+        <a [routerLink]="['/afterlog/home-for-roles']">
+          <img src="images/universityLogo.png" alt="PGSMS" width="40px" height="40px">
+        </a>
+      </div>
+    </nav>
+
+    <h3 style="margin-left: 15px; margin-top: 5px; color: orange;">PGSMS</h3>
+  </div>
+  <hr style="color: aliceblue;">
+  <br>
+
+
+  <!-- Sidebar Content Wrapper -->
+  <div class="sidebar-content">
+    <!-- Main Menu -->
+    <ul *ngIf="!isDropdownActive">
+      
+
+      <nav>
+
+        <div *ngIf="mode === 'beforeLog'">
+          <li routerLinkActive="active"><a routerLink="/beforelog/welcome">Home</a></li>
+          <li routerLinkActive="active"><a routerLink="/beforelog/enroll">Enroll</a></li>
+          <li routerLinkActive="active"><a routerLink="/beforelog/login">Login</a></li>
+        </div>
+
+        <div *ngIf="mode === 'afterLog'">
+          <li routerLinkActive="active"><a routerLink="/afterlog/home-for-roles">Home</a></li>
+          <li [class.active]="isDashboardActive()"><a (click)="navigateToDashboard()">Dashboard</a></li>
+          <li [class.active]="isEditProfileActive()"><a (click)="navigateToEditProfile()">Profile</a></li>
+          <li [class.active]="isAllNotificationActive()"><a (click)="navigateToAllNotifications()">Notification</a></li>
+          <li *ngIf="userRole === 'ADMIN' || userRole === 'SUPERVISOR' || userRole === 'EXAMINER' || userRole === 'SUPERVISOR-EXAMINER'" [class.active]="isEmailsActive()"><a (click)="navigateToEmails()">Emails</a></li>
+        </div>
+
+      </nav>
+    </ul>
+
+
+    <!-- Dropdown Menu -->
+    <ul *ngIf="isDropdownActive">
+
+      <li (click)="toggleDropdown()"><a style="color: orange; cursor: pointer;">More Details <i class="fa fa-caret-down" style="margin-left: 5px; font-size: 12px;"></i></a></li>
+
+      <li (click)="toggleDropdown1()"><a class="first-dropdown">Postgraduate Studies <i class="fa fa-caret-down" style="margin-left: 5px; font-size: 12px;"></i></a></li>
+
+      <ul *ngIf="dropdown1" class="second-dropdown">
+        <nav>
+          <div *ngIf="mode === 'beforeLog'">
+            <li routerLinkActive="active"><a routerLink="/dropdown/item1">Programmes</a></li>
+            <li routerLinkActive="active"><a routerLink="/dropdown/item2">Admission</a></li>
+            <li routerLinkActive="active"><a routerLink="/dropdown/item3">Scholarships</a></li>
+            <li routerLinkActive="active"><a routerLink="/beforelog/mphil-phd-research">Research</a></li>
+          </div>
+
+          <div *ngIf="mode === 'afterLog'">
+            <li routerLinkActive="active"><a routerLink="/dropdown/item1">Programmes</a></li>
+            <li routerLinkActive="active"><a routerLink="/dropdown/item2">Admission</a></li>
+            <li routerLinkActive="active"><a routerLink="/dropdown/item3">Scholarships</a></li>
+            <li routerLinkActive="active"><a routerLink="/afterlog/mphil-phd-research">Research</a></li>
+          </div>
+        </nav>
+      </ul>
+
+      <li (click)="toggleDropdown2()"><a class="first-dropdown">Computer Engineering <i class="fa fa-caret-down" style="margin-left: 5px; font-size: 12px;"></i></a></li>
+
+      <ul *ngIf="dropdown2" class="second-dropdown">
+        <li routerLinkActive="active"><a routerLink="/dropdown/item1">Programmes</a></li>
+        <li routerLinkActive="active"><a routerLink="/dropdown/item2">Admission</a></li>
+      </ul>
+
+      <li (click)="toggleDropdown3()"><a class="first-dropdown">Centers & Units <i class="fa fa-caret-down" style="margin-left: 5px; font-size: 12px;"></i></a></li>
+
+      <ul *ngIf="dropdown3" class="second-dropdown">
+        <li routerLinkActive="active"><a routerLink="/dropdown/item1">Programmes</a></li>
+        <li routerLinkActive="active"><a routerLink="/dropdown/item2">Admission</a></li>
+      </ul>
+
+      <li (click)="toggleDropdown4()"><a class="first-dropdown">Department & Staff <i class="fa fa-caret-down" style="margin-left: 5px; font-size: 12px;"></i></a></li>
+
+      <ul *ngIf="dropdown4" class="second-dropdown">
+        <li routerLinkActive="active"><a routerLink="/dropdown/item1">Programmes</a></li>
+        <li routerLinkActive="active"><a routerLink="/dropdown/item2">Admission</a></li>
+      </ul>
+
+    </ul>
+  </div>
+
+
+
+  <!-- Toggle Dropdown -->
+  <ul class="sidebar-footer" *ngIf="!isDropdownActive">
+    <li (click)="toggleDropdown()">
+      
+      <a style="cursor: pointer;">More Details <i [ngClass]="!isDropdownActive ? 'fa fa-caret-up' : 'fa fa-caret-down'" style="margin-left: 5px; font-size: 12px;"></i></a>
+    </li>
+  </ul>
+</div>
+  

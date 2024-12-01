@@ -1,0 +1,43 @@
+<div class="modal">
+    <div class="modal-content">
+      
+      <div class="modal-header"> 
+        <h5 class="modal-title"><b>Set deadlines for Examiners</b></h5>
+        <span class="close" (click)="closeSetDeadlinesForExaminers()">&times;</span>
+      </div><br>
+  
+      <!-- Display previously assigned examiners if any -->
+      <div *ngIf="assignedExaminers.length > 0">
+        <h6><b>Previously Assigned Examiners:</b></h6>
+        <ul>
+          <li *ngFor="let examiner of assignedExaminers">
+            {{ examiner.fullName }}
+          </li>
+        </ul>
+        <br>
+
+        <h6><b>Set Deadline</b></h6>
+
+        <div class="feedback-form">
+          <form (ngSubmit)="onSubmit()">
+      
+            <table style="width: 100%;">
+              <tr>
+                <td></td>
+                <td>
+                  <div style="display: flex;">
+                    <!-- <input type="date" name="date"  required>
+                    <input type="time" name="time" required> -->
+                    <input type="date" name="date" [(ngModel)]="setDueDate.date" required>
+                    <input type="time" name="time" [(ngModel)]="setDueDate.time" required>
+                    <input type="submit" value="Set Deadline">
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+
+      </div>
+</div>
+  

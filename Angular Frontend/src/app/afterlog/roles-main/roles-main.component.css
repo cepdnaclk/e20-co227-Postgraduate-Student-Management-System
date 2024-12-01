@@ -1,0 +1,90 @@
+.hero {
+max-width: 1100px;
+margin: 0 auto;
+}
+.hero-sidebar {
+max-width: 240px;
+margin: 0 auto;
+}
+.enroll-button-container {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+.enroll-button {
+background-color: #400752;
+color: white;
+padding: 15px 30px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+.enroll-button:hover {
+background-color: #333;
+}
+.toggle-btn {
+position: fixed;
+top: 10px;
+right: 10px;
+background-color: #400752;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+}
+.toggle-btn:hover {
+background-color: #333;
+}
+
+/* Middle content */
+.middle-content.full-width {
+    display: block;
+    width: calc(100% - 232px);
+    margin-left: 232px;
+    margin-right: 0px; 
+    padding-top: 0px;
+    transition: margin-right 0.3s ease;
+}
+
+.middle-content.reduced-width {
+    display: block;
+    width: calc(100% - 482px);
+    margin-left: 232px;
+    margin-right: 250px; 
+    padding-top: 0px;
+    transition: margin-right 0.3s ease;
+}
+
+.right-sidebar{
+    display: block;
+}
+
+@media only screen and (max-width: 900px) {
+    .middle-content.full-width {
+        margin-left: 232px;
+        width: calc(100% - 232px);
+    }
+    .middle-content.reduced-width{
+        margin-left: 232px;
+        width: calc(100% - 232px);
+    }
+    .right-sidebar{
+        display: none;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .middle-content.full-width {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .middle-content.reduced-width{
+        margin-left: 0px;
+        width: 100%;
+    }
+    .right-sidebar{
+        display: none;
+    }
+}

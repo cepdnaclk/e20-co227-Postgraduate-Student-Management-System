@@ -1,0 +1,86 @@
+            
+<div class="topic">
+    <h1 class="text-center">Sign Up</h1>
+</div>
+
+<div class="login-form">
+    <form (ngSubmit)="onSubmit(signupForm)" #signupForm="ngForm"> 
+        <table style="width: 100%;">
+            <tr>
+                <td><input type="text" [(ngModel)]="signupData.name" name="name" placeholder="Name..." required minlength="3" #nameInput="ngModel"></td>
+            </tr>
+            <tr>
+                <!-- Error message for name -->
+                <div *ngIf="nameInput.invalid && nameInput.touched" class="error-message">
+                    <small *ngIf="nameInput.errors?.['required']">Name is required.</small>
+                    <small *ngIf="nameInput.errors?.['minlength']">Name must be at least 3 characters long.</small>
+                </div>
+            </tr>
+
+            <tr>
+                <td><input type="email" [(ngModel)]="signupData.email" name="email" placeholder="Email..." required email #emailInput="ngModel"></td>
+            </tr>
+            <tr>
+                <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error-message">
+                    <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
+                    <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                </div>
+            </tr>
+
+            <tr>
+                <td><input type="text" [(ngModel)]="signupData.username" name="username" placeholder="Username..." required minlength="4" #usernameInput="ngModel"></td>
+            </tr>
+            <tr>
+                <!-- Error message for username -->
+                <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error-message">
+                    <small *ngIf="usernameInput.errors?.['required']">Username is required.</small>
+                    <small *ngIf="usernameInput.errors?.['minlength']">Username must be at least 4 characters long.</small>
+                </div>
+            </tr>
+
+            <tr>
+                <td><input type="password" [(ngModel)]="signupData.password" id="pwd" name="pwd" placeholder="Password..." required minlength="6" #passwordInput="ngModel"></td>
+            </tr>
+            <tr>
+                <!-- Error message for password -->
+                <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error-message">
+                    <small *ngIf="passwordInput.errors?.['required']">Password is required.</small>
+                    <small *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                </div>
+            </tr>
+
+            <tr>
+                <td><input type="password" [(ngModel)]="signupData.repeatPassword" id="repwd" name="repwd" placeholder="Confirm Password..." required #repeatPasswordInput="ngModel" [ngClass]="{'is-invalid': repeatPasswordInput.touched && repeatPasswordInput.value !== passwordInput.value}"></td>
+            </tr>
+            <tr>
+                <!-- Error message for Repeat password -->
+                <div *ngIf="repeatPasswordInput.touched && repeatPasswordInput.value !== passwordInput.value" class="error-message">
+                    <small>Passwords do not match.</small>
+                </div>
+            </tr>
+
+            <tr>
+                <td><hr></td>
+            </tr>
+
+            <tr>
+                <!-- Error message display -->
+                <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                </div>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Sign Up" ></td>
+            </tr>
+            <tr>
+                <td><p style="font-family: Arial, Helvetica, sans-serif; font-size:12px;">Already have registered? <button class="btn" (click)="navigateToLogin()">Login</button>
+                </p></td>
+            </tr>
+        </table>
+        <br>
+        
+        <br><br>
+    </form>
+</div>
+<br><br><br><br><br>
+

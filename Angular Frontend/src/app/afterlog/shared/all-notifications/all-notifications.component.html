@@ -1,0 +1,17 @@
+<div id="notificationPanel" class="notification-panel" [style.display]="notifications.length > 0 ? 'block' : 'none'">
+    <h6 style="text-align: center; color:rgb(0, 0, 54); margin:0px"><b>Notifications</b></h6>
+    <hr>
+    <ng-container *ngIf="notifications.length > 0; else noNotifications">
+      <p *ngFor="let notification of notifications.slice().reverse()" class="notification-item">
+        <b>{{ notification.title }}</b> <br>
+        {{ notification.message }} 
+        <!-- If this boolean is true , notification is in low transparency. -->
+        <!-- {{ notification.read }}  -->
+        <!-- Larger space with margin -->
+        <span style="margin-left: 20px;">{{ notification.timestamp | date:'short' }}</span>
+      </p>
+    </ng-container>
+    <ng-template #noNotifications>
+      <p>No new notifications.</p>
+    </ng-template>
+</div>

@@ -1,0 +1,54 @@
+/* Notification Panel */
+.notification-panel {
+    display: none;
+    position: fixed;
+    top: 45px;
+    right: 50px;
+    background-color: #d1d1d1;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 10px;
+    z-index: 9999;
+    border-radius: 10px;
+    font-size: 14px;
+    max-height: 60%;
+    overflow-y: auto;
+}
+
+.notification-panel p {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-item {
+    position: relative; /* Make the p element the reference point for the absolutely positioned button */
+    padding-right: 40px; /* Optional: Add some padding to make space for the button */
+}
+  
+.tick-button {
+    position: absolute;
+    bottom: 0; /* Align to the bottom of the p element */
+    right: 0;  /* Align to the right of the p element */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 0, 54); /* Adjust button color */
+}
+
+.tick-button i {
+color: green;
+font-size: 14px;  /* Adjust size if needed */
+}
+
+@media screen and (max-width: 600px) {
+    .notification-panel{
+        width: 200px;
+        right: 20px;
+        font-size: 12px;
+    }
+    h5{
+        font-size: 16px;
+    }
+}

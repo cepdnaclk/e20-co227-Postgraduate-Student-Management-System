@@ -1,0 +1,110 @@
+<br>
+<div class="Edit-profile-top">
+    <!-- <div class="dp">
+        <i class="fa fa-circle-user"></i>
+    </div> -->
+    <div class="dp">
+        <!-- Show profile picture if it exists, otherwise show default icon -->
+        <img *ngIf="isThereProfilePicture" [src]="profilePictureUrl" alt="Profile Picture" style="width: 170px; height: 170px; border-radius: 50%; margin-top: 10px;">
+        <div *ngIf="!isThereProfilePicture">
+            <i class="fa fa-circle-user" style="font-size: 150px; margin-top: 20px;"></i>
+        </div>
+    </div>
+    <div class="profile-box">
+        <!-- <h3>Reg. No</h3> -->
+        <h3>{{ user.name }}</h3>
+        <h5>Roles</h5>
+        <h5>Company</h5>
+        <!-- <h5>Status</h5> -->
+    </div>
+    
+</div>
+
+
+
+<br>
+<div class="research-box">
+    
+    <div class="form-container">
+        <form (submit)="onEditProfileSubmit()" method="post">
+
+            <h4>General</h4>
+            <table class="form-tables">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" [(ngModel)]="user.name" placeholder="Name..."></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username"  [(ngModel)]="user.username" placeholder="Username..."></td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td><input type="tel" name="contactNumber"  [(ngModel)]="user.contactNumber" placeholder="Contact Number..."></td>
+                </tr>
+                <!-- <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="tel" name="mobileNumber" placeholder="Mobile Number..."></td>
+                </tr> -->
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email"  [(ngModel)]="user.email" placeholder="Email Address..."></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <div class="myButtonDesign">
+                            <a (click)="navigateToPasswordChange()" class="my-button">Change Password</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+            
+            <h4>User Picture</h4>
+            <table class="form-tables">
+                <tr>
+                    <td>Current Picture</td>
+                    <td>
+                        <i *ngIf="!isThereProfilePicture" class="fa fa-circle-user" style="font-size: 100px;"></i>
+                        <img *ngIf="isThereProfilePicture" [src]="profilePictureUrl" alt="Profile Picture"  style="width: 100px; height: 100px; border-radius: 50%;">
+                        <!-- <label style="font-size: 14px;"><input type="checkbox" name="agree" value="terms"> Delete picture</label> -->
+                        <br><label style="font-size: 14px;">
+                            <input type="checkbox" [(ngModel)]="deletePictureChecked" name="deletePictureChecked"> Delete picture
+                        </label>
+                        
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>New Picture</td>
+                    <td><input type="file" (change)="onFileSelected($event)">
+                </tr>
+                <br>
+            </table>
+            <!-- <hr>
+
+            <h4>Optional</h4>
+            <table class="form-tables">
+                <tr>
+                    <td>ID Number</td>
+                    <td><input type="text" name="idNumber" placeholder="ID..."></td>
+                </tr>
+                <tr>
+                    <td>Institution</td>
+                    <td><input type="text" name="instution" placeholder="Institution..."></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="address" rows="4"></textarea></td>
+                </tr>
+            </table> -->
+            <hr>
+            
+            <br>
+            <input type="submit" value="Update Profile"><br><br>
+        </form>
+    </div>
+    <br>
+    
+</div>

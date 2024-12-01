@@ -1,0 +1,559 @@
+@font-face {
+  font-family: 'TabulaITCPro Book';
+  src: url("assets/fonts/TabulaITCPro-Book.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  font-family: 'TabulaITCPro Book';
+  background-color: rgb(243, 243, 243);
+}
+
+
+
+/* You can add global styles to this file, and also import other style files */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 2px;
+    background-color: white;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(179, 179, 179); 
+    border-radius: 2px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+  }
+
+/* Whole Container */
+.wholeContainer {
+  display: block;
+  width: 100%;
+}
+
+/* Main */
+.main{
+  width: 100%;
+  margin-top: 44px; /* Adjust based on the height of the top-navigation */
+  overflow-y: auto;
+  height: calc(100% - 44px);
+  background-color: rgb(243, 243, 243);
+}
+
+.middle-content-beforelog{
+  display: block;
+  width: calc(100% - 232px);
+  margin-left: 232px;
+  margin-right: 0px; 
+  padding-top: 0px;
+}
+/* End Main */
+
+
+/* Topic */
+.topic{
+    text-align: center;
+}
+.topic h1 {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 600;
+    color: rgb(0, 0, 54);
+    text-align: center;
+    padding: 0px;
+    padding-bottom: 15px;
+    padding-top: 0;
+    border-radius: 8px;
+    background-color: rgb(243, 243, 243);
+}
+/* End Topic */
+
+/* Buttons */
+.myButtonDesign {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+.my-button {
+  background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));
+  color: white;            
+  padding: 5px 10px;    
+  font-size: 16px;          
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  justify-content: center;
+}
+.my-button:hover {
+  background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(18, 55, 71, 1));
+}
+/* End Buttons */
+
+/* Required Asterisk Mark */
+.req {
+  color: red;
+  margin-left: 4px; /* To create some space between label and the asterisk */
+  font-size: 14px; /* Adjust the font size to fit the label size */
+  cursor: pointer;
+}
+
+/* Table */
+.RegisteredTable {
+  width: 90%;
+  overflow-x: auto;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+}
+
+.RegisteredTable input.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #e9ecef;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.RegisteredTable input.form-control:focus {
+  background-color: #ffffff;
+}
+
+/* Add a container for horizontal scrolling */
+.RegisteredTable .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.RegisteredTable table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.RegisteredTable thead {
+  background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));
+  color: #ffffff;
+  text-align: left;
+}
+
+.RegisteredTable th, .RegisteredTable td {
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.RegisteredTable thead th {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.RegisteredTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.3s ease;
+}
+
+.RegisteredTable tbody tr:nth-of-type(even) {
+  background-color: #f1f3f5;
+}
+
+.RegisteredTable tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+.RegisteredTable tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+.RegisteredTable td {
+  color: #495057;
+}
+
+@media (max-width: 750px) {
+
+  .RegisteredTable {
+    transform: scale(0.7); /* Scale down the table */
+    transform-origin: top left; /* Ensure the scale originates from the top-left corner */
+    width: 150%;
+  }
+  /* .RegisteredTable table, 
+  .RegisteredTable thead, 
+  .RegisteredTable tbody, 
+  .RegisteredTable th, 
+  .RegisteredTable td, 
+  .RegisteredTable tr {
+      display: block;
+  }
+
+  .RegisteredTable thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  .RegisteredTable tr {
+      margin-bottom: 15px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px 20px;
+  }
+
+  .RegisteredTable td {
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+      font-size: 14px;
+  }
+
+  .RegisteredTable td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 45%;
+      padding-left: 15px;
+      font-weight: 500;
+      color: #007bff;
+  }
+
+  .RegisteredTable td:last-child {
+      border-bottom: 0;
+  } */
+}
+/* End Table */
+
+
+
+/* Events & Functions */
+/* Events */
+.event-box {
+  width: auto;
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.even-container {
+  justify-content: space-between;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 50px;
+}
+
+/* Cards */
+.card.full-width {
+  background: linear-gradient(135deg, gray, rgb(231, 231, 231));
+  border-radius: 20px;
+  border: 0px;
+  padding: 20px;
+  width: 100%;
+  height: 140px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+  transition: width 1.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card.reduced-width {
+  background: linear-gradient(135deg, gray, rgb(231, 231, 231));
+  border-radius: 20px;
+  border: 0px;
+  padding: 20px;
+  width: 100%;
+  height: 140px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+  transition: width 1.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .card:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3), 0 25px 50px rgba(0, 0, 0, 0.3);
+} */
+
+
+
+
+.icon-container.full-width {
+  display: flex;
+  width: 100%;
+  height: 130px;
+  border-radius: 20px;
+  padding: 15px;
+  position: absolute; /* Absolute positioning */
+  top: -12px; /* Adjust the value to control how much it overlaps */
+  left: 50%;
+  transform: translateX(-55%); /* Center it horizontally */
+  z-index: 1; /* Ensure it appears on top of the card */
+  transition: width 1.5s ease, transform 0.3s ease-in-out;
+}
+.icon-container.reduced-width {
+  display: flex;
+  width: 100%;
+  height: 130px;
+  border-radius: 20px;
+  padding: 15px;
+  position: absolute; /* Absolute positioning */
+  top: -12px; /* Adjust the value to control how much it overlaps */
+  left: 50%;
+  transform: translateX(-55%); /* Center it horizontally */
+  z-index: 1; /* Ensure it appears on top of the card */
+  transition: width 1.5s ease, transform 0.3s ease-in-out;
+}
+.icon-container:hover {
+  transform: translateX(-60%) scale(1.05);
+}
+
+.image-box {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin-top: 17.5px;
+  background-color: rgba(220, 220, 220, 0.363);
+}
+
+.btnn {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  font-size: 17px;
+  text-align: center;
+  width: auto;
+  flex: 1;
+  background-color: transparent;
+}
+.btnn.functionBtn{
+  text-align: left;
+}
+
+.content {
+  margin-top: 20px;
+  text-align: center;
+  height: 100px;
+}
+
+
+
+.more-space {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #b3ff00;
+  text-decoration: none;
+  background-color: rgba(255, 0, 64, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.more-space:hover {
+  background-color: rgba(255, 0, 64, 0.4);
+}
+
+
+
+/* Functions */
+.function-card.full-width {
+  background: linear-gradient(135deg, gray, rgb(231, 231, 231));
+  border-radius: 20px;
+  padding: 20px;
+  width: 80%;
+  height: 90px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+  transition: width 1.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.function-card.reduced-width {
+  background: linear-gradient(135deg, gray, rgb(231, 231, 231));
+  border-radius: 20px;
+  padding: 20px;
+  width: 70%;
+  height: 90px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+  transition: width 1.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* .function-card:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3), 0 25px 50px rgba(0, 0, 0, 0.3);
+} */
+
+.function-icon-container.full-width {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  border-radius: 20px;
+  padding: 15px;
+  position: absolute; /* Absolute positioning */
+  top: -12px; /* Adjust the value to control how much it overlaps */
+  left: 50%;
+  transform: translateX(-52%); /* Center it horizontally */
+  z-index: 1; /* Ensure it appears on top of the card */
+  transition: width 1.5s ease, transform 0.3s ease-in-out;
+}
+.function-icon-container.reduced-width {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  border-radius: 20px;
+  padding: 15px;
+  position: absolute; /* Absolute positioning */
+  top: -12px; /* Adjust the value to control how much it overlaps */
+  left: 50%;
+  transform: translateX(-52%); /* Center it horizontally */
+  z-index: 1; /* Ensure it appears on top of the card */
+  transition: width 1.5s ease, transform 0.3s ease-in-out;
+}
+.function-icon-container:hover {
+  transform: translateX(-52.5%) scale(1.02);
+}
+
+.function-image-box {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin-top: 2.5px;
+  margin-left: 2.5px;
+  background-color: rgba(220, 220, 220, 0.363);
+}
+
+.function-even-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+
+/* Custom class for the SweetAlert popup */
+.custom-popup-class {
+  width: 250px !important; /* Set the width */
+  height: 130px !important; /* Set the height */
+  font-size: 14px; /* Set the font size */
+  padding: 10px; /* Optional: Adjust padding */
+}
+
+/* Custom class for the SweetAlert title */
+.custom-title-class {
+  font-size: 16px; /* Set the font size for the title */
+}
+
+/* Custom class for the SweetAlert content text */
+.custom-text-class {
+  font-size: 12px; /* Set the font size for the content text */
+}
+
+.research-box {
+  background-color: rgb(243, 243, 243);
+  width: auto;
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 14px;
+}
+
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 1250px) {
+  .even-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    justify-items: center;
+  }
+  .card.full-width{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .even-container {
+    grid-template-columns: 1fr;
+  }
+  .function-card.reduced-width {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .even-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card.full-width{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .even-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 520px) {
+  .even-container {
+    grid-template-columns: 1fr;
+  }
+  .function-card.reduced-width {
+    width: 100%;
+  }
+  .card.reduced-width {
+    height: 100px;
+  }
+  .icon-container.reduced-width {
+    height: 100px;
+  }
+  .image-box{
+    margin-top: 4px;
+  }
+  .my-button{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .my-button{
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,34 @@
+/* Button Group in Registered Form */
+.btn-group{
+    display: flex;
+}
+.btn-group button {
+    color: white; /* White text */
+    padding: 10px 10px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+.approve-button {
+    border-radius: 4px 0px 0px 4px;
+    background-color: #1D716F; /* Green background */
+    border: 1px solid #1D716F; /* Green border */
+}
+.approve-button:hover{
+    background-color: #279694;
+}
+.reject-button {
+    border-radius: 0px 4px 4px 0px;
+    padding: 10px 15px;
+    background-color: #081A20; /* Red background */
+    border: 1px solid #081A20; /* Red border */
+}
+.reject-button:hover {
+    background-color: #113642;
+}
+
+.custom1-popup-class {
+    width: 250px !important; /* Set the width */
+    height: 250px !important; /* Set the height */
+    font-size: 14px; /* Set the font size */
+    padding: 10px; /* Optional: Adjust padding */
+  }

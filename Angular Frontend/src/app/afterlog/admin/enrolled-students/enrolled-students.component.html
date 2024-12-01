@@ -1,0 +1,109 @@
+<div class="topic">
+    <h1>Enrolled Students</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th colspan="6">Student Details</th>
+                    <th>Other</th>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <th>Edit Details</th>
+                    <th>Registration Number</th>
+                    <th>Name with Initials</th>
+                    <th>Full Name</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Educational</th>
+                    <!-- <th>University/Institute</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Degree</th>
+                    <th>Attachment File</th>
+                    <th>Field</th>
+                    <th>Class/Pass</th>
+                    <th>Publications</th>
+                    <th>Program of Study</th> -->
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- <tr *ngFor="let row of filteredData"> -->
+                    <tr *ngFor="let student of filteredData">
+
+                    <td id="status-cell-{{student.id}}">
+                        <div *ngIf="!student.registrationStatus; else statusText" class="btn-group">
+                            <button (click)="updateStatus(student.id, 'Enrolled', 'Enroll')" [id]="'approve-button-' + student.id" class="approve-button" title="Edit details before enroll!">
+                                Enroll
+                            </button>
+                            <button (click)="updateStatus(student.id, 'Cancelled', 'Cancel Enroll')" [id]="'reject-button-' + student.id" class="reject-button">
+                                Cancel
+                            </button>
+                        </div>
+                        <ng-template #statusText>
+                            <strong [ngStyle]="{ color: student.registrationStatus === 'Enrolled' ? 'green' : 'red' }">{{ student.registrationStatus }}</strong>
+                        </ng-template>
+                    </td>
+
+                    <td>
+                        <div *ngIf="!student.registrationStatus">
+                            <a (click)="openEnrolledStudentsDetailsPopup(student.id, 'edit')" style="color: blue; cursor: pointer;">
+                                Edit..
+                            </a>
+                        </div>
+                        <div *ngIf="student.registrationStatus">
+                            Edit..
+                        </div>
+                    </td>
+                    <td>{{ student.registrationNumber }}</td>
+                    <td>{{ student.nameWithInitials }}</td>
+                    <td>{{ student.fullName }}</td>
+                    <td>{{ student.contactNumber }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.address }}</td>
+                    <td>
+                        <a (click)="openEnrolledStudentsDetailsPopup(student.id, 'seeQualification')" style="color: blue; cursor: pointer;">
+                            Qualifications..
+                        </a>
+                    </td>
+
+                    <app-enrolled-students-details-popup *ngIf="isEnrolledStudentsDetailsPopupOpen" [mode] = "selectedMode" [studentId]="selectedStudentId" (close)="closeEnrolledStudentsDetailsPopup()" (update)="handleStudentUpdate()"></app-enrolled-students-details-popup>
+
+                    <!-- <td>{{ student.university }}</td>
+                    <td>{{ student.fromDate }}</td>
+                    <td>{{ student.toDate }}</td>
+                    <td>{{ student.degree }}</td>
+                    <td>
+                        <a href="javascript:void(0)" (click)="download(student.attachementFile, student.attachementFileOriginalName)">
+                        {{ student.attachementFileOriginalName }}
+                        </a>
+                    </td>
+                    <td>{{ student.field }}</td>
+                    <td>{{ student.classPass }}</td>
+                    <td>{{ student.publications }}</td>
+                    <td>{{ student.programOfStudy }}</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br><br><br><br><br>
+
+<!-- Loading overlay -->
+<div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>

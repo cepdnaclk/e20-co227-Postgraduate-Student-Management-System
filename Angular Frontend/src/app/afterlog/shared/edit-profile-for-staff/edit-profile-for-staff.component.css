@@ -1,0 +1,118 @@
+.Edit-profile-top{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-box{
+    /* background-color: aqua; */
+    width: fit-content;
+    padding: 10px;
+    margin-left: 40px;
+}
+
+.research-box {
+    /* background-color: aqua; */
+    width: auto;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* .dp{
+    background-color: bisque;
+} */
+.dp i.fa-circle-user {
+    font-size: 150px; /* Change this value to adjust the size */
+}
+
+
+/* Form */
+.form-container {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-container input[type=submit] {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-container input[type=submit]:hover {
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(18, 55, 71, 1));
+}
+.form-container input[type=text],input[type=tel], input[type=email],textarea, select {
+    width: 100%;
+    padding: 8px 16px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #dfdfdf;
+}
+.form-container select {
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #dfdfdf;
+}
+.form-container textarea {
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    background-color: #dfdfdf;
+    resize: none;
+}
+.form-container .table .td{
+    width: 50%;
+}
+
+.current-picture{
+    display: block;
+}
+
+.form-tables {
+    width: 100%;
+}
+
+.form-tables td:first-child {
+    width: 40%;
+}
+
+.form-tables td:last-child {
+    width: 60%;
+}
+
+@media screen and (max-width: 1250px) {
+    .form-container{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .form-container{
+        width: 90%;
+    }
+    .dp i.fa-circle-user {
+        font-size: 100px; /* Change this value to adjust the size */
+        padding-top: 10px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .form-container{
+        width: 100%;
+        font-size: 12px;
+    }
+    .dp i.fa-circle-user {
+        font-size: 80px; /* Change this value to adjust the size */
+        padding-top: 10px;
+    }
+}

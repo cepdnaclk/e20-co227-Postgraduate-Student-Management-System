@@ -1,0 +1,172 @@
+
+
+<div class="research-box">
+
+    <br>
+    <!-- <div style="display: flex; flex-direction: row; align-items: center; flex-wrap: nowrap;"> -->
+    <div *ngIf="student.registrationNumber"><h4><b>{{ student.registrationNumber }}</b></h4></div>
+    <div *ngIf="!student.registrationNumber"><h4><b>{{ student.regNumber }}</b></h4></div>
+
+
+    <h6>{{ student.nameWithInitials }}</h6>
+    <h6>{{ student.programOfStudy }}</h6>
+    <h6>Registered Date:  {{ student.registeredDate | date:'dd-MM-yyyy' }}</h6>
+
+    <div style="display: flex; align-items: center;">
+        <h6 style="white-space: nowrap;">{{ student.status }}</h6>
+
+        <div *ngIf="userRole === 'ADMIN'" class="myButtonDesign" style="justify-content: flex-end;">
+            <a (click)="openEditStudentProfileBoxHeader()" class="my-button" style="font-size: 14px; margin-right: 50px; padding: 5px 20px;">Edit</a>
+        </div>
+
+        <app-edit-student-profile-box-header *ngIf="isEditStudentProfileBoxHeaderOpen" (close)="closeEditStudentProfileBoxHeader()" 
+        [regNumber]="student.registrationNumber ? student.registrationNumber : student.regNumber"
+        [nameWithInitials]="student.nameWithInitials"
+        [programOfStudy]="student.programOfStudy"
+        [registeredDate]="student.registeredDate"
+        [status]="student.status"
+        (studentUpdated)="updateStudentDetails($event)"></app-edit-student-profile-box-header>
+    </div>
+
+    <hr style="margin: 0px; margin-bottom: 8px; color: #c0c0c0; border-width: 1px; margin-top: 5px;">
+
+    <br>
+    <h5><b>Research</b></h5>
+    <br>
+    <h6>Effective Date of Degree:</h6>
+
+    <span *ngIf="supervisorName"><h6>Current Supervisor: {{ supervisorName }}</h6></span>
+
+    <div *ngIf="userRole === 'ADMIN'">
+        <div *ngIf="hasSupervisor; else assignButton">
+            <div class="myButtonDesign">
+
+                <a (click)="openAssignSupervisorByAdmin()" class="my-button">Change Supervisor</a>
+            </div>
+        </div>
+        <ng-template #assignButton>
+            <div class="myButtonDesign">
+                <a (click)="openAssignSupervisorByAdmin()" class="my-button">Assign Supervisor</a>
+            </div>
+        </ng-template>
+
+        <!-- <button (click)="openAssignSupervisorByAdmin()" class="btn">Assign Supervisor</button> -->
+        <app-assign-supervisor-by-admin *ngIf="isAssignSupervisorByAdminOpen" (close)="closeAssignSupervisorByAdmin()" (supervisorAssigned)="onSupervisorAssigned($event)" [regNumber]="regNumber" ></app-assign-supervisor-by-admin>
+        <!-- <app-collapsible-section
+            buttonName="General"
+            [tiles]="[
+                { type: 'forum', title: 'Forum 1', routerLink: '/afterlog/feedback-page' },
+                { type: 'submission', title: 'Application Submission', routerLink: '/afterlog/assignment-submission' }
+            ]"></app-collapsible-section> -->
+    </div>
+
+    <br>
+    <div class="tabs" style="cursor: pointer;">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab1'" (click)="selectTab('tab1')">Year 1</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab2'" (click)="selectTab('tab2')">Year 2</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab3'" (click)="selectTab('tab3')">Year 3</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab4'" (click)="selectTab('tab4')">Year 4</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" [class.active]="activeTab === 'tab5'" (click)="selectTab('tab5')">Thesis</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div *ngIf="activeTab === 'tab1'">
+                <!-- Content for Tab 1 -->
+                <app-collapsible-section *ngFor="let section of loadingSections" [id]="section.id" [buttonName]="section.buttonName" [tiles]="section.loadingTiles" [regNumber]="regNumber" [activeTab]="activeTab"></app-collapsible-section>
+
+                <div class="myButtonDesign">
+                    <a (click)="openModal()" class="my-button">Add Section</a>
+                </div><br><br>
+                <app-create-collapsible-section *ngIf="isModalOpen" (close)="closeModal()" (create)="addNewSection($event)" [regNumber]="regNumber" [activeTab]="activeTab"></app-create-collapsible-section>
+
+            </div>
+
+            <div *ngIf="activeTab === 'tab2'">
+            <!-- Content for Tab 2 -->
+                <app-collapsible-section *ngFor="let section of loadingSections" [id]="section.id" [buttonName]="section.buttonName" [tiles]="section.loadingTiles" [regNumber]="regNumber" [activeTab]="activeTab"></app-collapsible-section>
+
+                <div class="myButtonDesign">
+                    <a (click)="openModal()" class="my-button">Add Section</a>
+                </div><br><br>
+                <app-create-collapsible-section *ngIf="isModalOpen" (close)="closeModal()" (create)="addNewSection($event)" [regNumber]="regNumber" [activeTab]="activeTab"></app-create-collapsible-section>
+
+            </div>
+
+            <div *ngIf="activeTab === 'tab3'">
+                <!-- Content for Tab 3 -->
+                <app-collapsible-section *ngFor="let section of loadingSections" [id]="section.id" [buttonName]="section.buttonName" [tiles]="section.loadingTiles" [regNumber]="regNumber" [activeTab]="activeTab"></app-collapsible-section>
+
+                <div class="myButtonDesign">
+                    <a (click)="openModal()" class="my-button">Add Section</a>
+                </div><br><br>
+                <app-create-collapsible-section *ngIf="isModalOpen" (close)="closeModal()" (create)="addNewSection($event)" [regNumber]="regNumber" [activeTab]="activeTab"></app-create-collapsible-section>
+
+            </div>
+
+            <div *ngIf="activeTab === 'tab4'">
+            <!-- Content for Tab 3 -->
+                <app-collapsible-section *ngFor="let section of loadingSections" [id]="section.id" [buttonName]="section.buttonName" [tiles]="section.loadingTiles" [regNumber]="regNumber" [activeTab]="activeTab"></app-collapsible-section>
+
+                <div class="myButtonDesign">
+                    <a (click)="openModal()" class="my-button">Add Section</a>
+                </div><br><br>
+
+                <app-create-collapsible-section *ngIf="isModalOpen" (close)="closeModal()" (create)="addNewSection($event)" [regNumber]="regNumber" [activeTab]="activeTab"></app-create-collapsible-section>
+
+            </div>
+
+            <div *ngIf="activeTab === 'tab5'">
+                <!-- Content for Tab 3 -->
+                <app-collapsible-section *ngFor="let section of loadingSections" [id]="section.id" [buttonName]="section.buttonName" [tiles]="section.loadingTiles" [regNumber]="regNumber" [activeTab]="activeTab"></app-collapsible-section>
+
+                <div class="myButtonDesign">
+                    <a (click)="openModal()" class="my-button">Add Section</a>
+                </div><br><br>
+                <app-create-collapsible-section *ngIf="isModalOpen" (close)="closeModal()" (create)="addNewSection($event)" [regNumber]="regNumber" [activeTab]="activeTab"></app-create-collapsible-section>
+            </div>
+
+        </div>
+    </div>
+
+    <br><h5><b>Email</b></h5><br>
+    <app-emails-page mode="sendEmailToStudent" [emailHeading]="false" [regNo]="regNumber"></app-emails-page>
+
+</div>
+<br>
+
+
+<!-- <div class="research-box">
+    <h5><b>Courses</b></h5>
+
+    <div class="course-container">
+        <div class="course-box">Course 1</div>
+        <div class="course-box">Course 2</div>
+        <div class="course-box">Course 3</div>
+    </div>
+
+    <br>
+    <div class="course-container">
+        <div class="course-box">Course 4</div>
+        <div class="course-box">Course 5</div>
+        <div class="course-box">Course 6</div>
+    </div>
+</div>
+<br>
+
+<div class="research-box">
+    <h5><b>Email</b></h5>
+</div> -->
+
+<br><br><br>

@@ -1,0 +1,61 @@
+<!-- Second Navigation Bar -->
+<div class="secondnavigation">
+  
+  
+  <div class="myDropdown" *ngFor="let dropdown of dropdowns">
+    <button class="dropbtn" (click)="toggleDropdown(dropdown, $event)">
+      {{dropdown.title}} 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" [class.show]="dropdown.isOpen">
+      <a href="#link1">{{dropdown.item1}}</a>
+      <a href="#link2">{{dropdown.item2}}</a>
+      <a href="#link3">{{dropdown.item3}}</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- <div class="myDropdown">
+    <button class="dropbtn">Computer Engineering 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#link1">Facilities</a>
+      <a href="#link2">Specializations</a>
+      <a href="#link3">About</a>
+    </div>
+  </div>
+  
+  <div class="myDropdown" >
+    <button class="dropbtn">Postgraduate Studies
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#link1">Researches</a>
+      <a href="#link2">Research Facilities</a>
+      <a href="#link3">Procedure</a>
+    </div>
+  </div>
+
+  <div class="myDropdown" >
+    <button class="dropbtn">Centers & Units
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#link1">Computer Engineering Department</a>
+      <a href="#link2">Center for Engineering Research</a>
+      <a href="#link3">Computing Centre</a>
+    </div>
+  </div>
+  
+  <div class="myDropdown" >
+    <button class="dropbtn">Department & Staff
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#link1">Student Help guide</a>
+      <a href="#link2">Department ADPC</a>
+      <a href="#link3">IQAC</a>
+    </div>
+  </div> -->

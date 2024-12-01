@@ -1,0 +1,77 @@
+/*Login Page*/
+.login-form {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-form input[type=submit] {
+    width: 100%;
+    background: linear-gradient(135deg, #394251, #556379);
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.login-form input[type=submit]:hover {
+    background: linear-gradient(135deg, #394251, #394251);
+}
+.login-form input[type=text],input[type=password], select {
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #424242;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #dfdfdf;
+}
+
+.btn{
+    color:blue;
+    font-size: 13px;
+    margin: 0;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    text-align: right;
+}
+
+/* Toggle Password Visibility */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+.toggle-password-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Hide Sidebar on Small Screens */
+@media only screen and (max-width: 1150px) {
+    .login-form{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .middle-content-beforelog {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .login-form{
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .login-form{
+        width: 70%;
+    }
+}

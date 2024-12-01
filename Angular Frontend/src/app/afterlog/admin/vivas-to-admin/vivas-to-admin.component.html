@@ -1,0 +1,36 @@
+<div class="topic">
+    <h1>Vivas</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Reg. No</th>
+                    <th>Registration Number</th>
+                    <th>Viva Name</th>
+                    <th>Viva Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of filteredData">
+                    <td>{{ row.regNumber}}</td>
+                    <td>{{ row.registrationNumber}}</td>
+                    <td>{{ row.id }} {{ row.title }}</td>
+                    <td>{{ row.vivaDate }}</td>
+                    <td>{{ row.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<br><br><br><br><br>
+

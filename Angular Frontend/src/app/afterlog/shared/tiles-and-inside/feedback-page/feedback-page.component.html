@@ -1,0 +1,159 @@
+<br>
+<!-- For Examiner Feedback Provider and Reciever -->
+<div class="feedback-form" *ngIf= "mode === 'feedback-Examiner'">
+    <div *ngIf="feedbackList.length === 1"></div>
+    <div *ngIf="userRole === 'EXAMINER' || (userRole === 'SUPERVISOR-EXAMINER' && (userIdId === feedbackList[0].examiner.id || userIdId === feedbackList[1].examiner.id))">
+        <div *ngFor="let feedback of feedbackList">
+            <div *ngIf="examinerId === feedback.examiner.id">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>Feedback:</td>
+                        <td>
+                            <textarea *ngIf="!feedback.body || editFeedback" name="feedback" rows="4" style="width: 100%;" [(ngModel)]="feedbackBody"></textarea>
+
+                            <textarea *ngIf="feedback.body && !editFeedback" name="feedback" rows="4" style="width: 100%;" disabled>{{ feedback.body }}</textarea>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>Feedback file:</td>
+                        <td>
+                            <input *ngIf="!feedback.fileName && !feedback.body || editFeedback" type="file" (change)="onFileSelected($event)">
+
+                            <span *ngIf="feedback.body && !feedback.body">No Feedback file.</span>
+
+                            <a *ngIf="feedback.fileName" (click)="viewFile(feedback.fileName)" style="cursor: pointer;">{{ feedback.fileName }}</a>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <br>
+                <div *ngIf="!feedback.body && !feedback.fileName">
+                    <hr>
+                    <input type="submit" value="Upload Feedback" (click)="submitExaminerFeedback()">
+                </div>
+                <div *ngIf="feedback.body && feedback.fileName">
+                    <hr>
+                    <input type="submit" value="Edit Feedback" (click)="editExaminerFeedback()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="userRole === 'ADMIN' || userRole === 'SUPERVISOR' || userRole === 'STUDENT' || (userRole === 'SUPERVISOR-EXAMINER' && (userIdId != feedbackList[0].examiner.id && userIdId != feedbackList[1].examiner.id))">
+        <table style="width: 100%;" *ngFor="let feedback of feedbackList; let i = index">
+
+            <tr>
+                <td><h6><b>Examiner {{ i+1 }}</b></h6></td>
+                <td></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Feedback:</td>
+                <td>
+                    <!-- Display textarea if feedback is uploaded -->
+                    <textarea *ngIf="feedback.body" name="feedback" rows="4" style="width: 100%;">{{ feedback.body }}</textarea>
+    
+                    <!-- Display message if feedback is not uploaded -->
+                    <span *ngIf="!feedback.body">Feedback is not uploaded yet.</span>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>Feedback file:</td>
+                <td>
+                    <!-- Display file input if feedback is uploaded -->
+                    <a *ngIf="feedback.fileName" (click)="viewFile(feedback.fileName)" style="cursor: pointer;">{{ feedback.originalFileName }}</a>
+    
+                    <!-- Display message if feedback is not uploaded -->
+                    <span *ngIf="!feedback.fileName">No Feedback file.</span>
+                </td>
+            </tr>
+            <br><br>
+        </table>
+    
+    </div>
+    <br><br>
+</div>
+
+
+
+<!-- For Supervisor Feedback Provider -->
+<div class="feedback-form" *ngIf= "mode === 'feedbackProvider-Supervisor'">
+    <table style="width: 100%;" *ngFor="let feedback of feedbackList">
+        <tr>
+            <td>Feedback:</td>
+            <td>
+                <textarea *ngIf="!feedback.body" name="feedback" rows="4" style="width: 100%;" [(ngModel)]="feedbackBody"></textarea>
+
+                <textarea *ngIf="feedback.body" name="feedback" rows="4" style="width: 100%;">{{ feedback.body }}</textarea>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>Feedback file:</td>
+            <td>
+                <input *ngIf="!feedback.fileName && !feedback.body || editFeedback" type="file" (change)="onFileSelected($event)">
+
+                <span *ngIf="feedback.body && !feedback.body">No Feedback file.</span>
+
+                <a *ngIf="feedback.fileName" (click)="viewFile(feedback.fileName)" style="cursor: pointer;">{{ feedback.originalFileName }}</a>
+            </td>
+        </tr>
+        
+    </table>
+    <br>
+    <div *ngIf="!feedbackList[0].body && !feedbackList[0].fileName">
+        <hr>
+        <input type="submit" value="Upload Feedback" (click)="submitSupervisorFeedback()">
+    </div>
+    <div *ngIf="feedbackList[0].body && feedbackList[0].fileName">
+        <hr>
+        <input type="submit" value="Edit Feedback" (click)="editSupervisorFeedback()">
+    </div>
+    <br><br>
+</div>
+
+
+<!-- For Supervisor Feedback Reciever -->
+<div class="feedback-form" *ngIf="mode === 'feedbackReciever-Supervisor'">
+    <table style="width: 100%;" *ngFor="let feedback of feedbackList; let i = index">
+
+        <br>
+        <tr>
+            <td>Feedback:</td>
+            <td>
+                <!-- Display textarea if feedback is uploaded -->
+                <textarea *ngIf="feedback.body" name="feedback" rows="4" style="width: 100%;">{{ feedback.body }}</textarea>
+
+                <!-- Display message if feedback is not uploaded -->
+                <span *ngIf="!feedback.body">Feedback is not uploaded yet.</span>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>Feedback file:</td>
+            <td>
+                <!-- Display file input if feedback is uploaded -->
+                <a *ngIf="feedback.fileName" (click)="viewFile(feedback.fileName)" style="cursor: pointer;">{{ feedback.originalFileName }}</a>
+                <!-- <span class="file-size">{{ formatBytes(feedback.fileSize) }}</span> -->
+                
+                <!-- <li>
+                    <i class="fa fa-file"></i>
+                    <a (click)="viewFile(feedback.fileName)" style="cursor: pointer;">{{ feedback.fileName }}</a>
+                    <a href="javascript:void(0)" (click)="download(file.fileName,file.originalFileName)">{{ file.originalFileName }}</a>
+                    <span>{{ file.originalFileName }}</span>
+                    <span class="file-size">{{ formatBytes(file.fileSize) }}</span>
+                </li> -->
+
+                <!-- Display message if feedback is not uploaded -->
+                <span *ngIf="!feedback.fileName">No Feedback file.</span>
+            </td>
+        </tr>
+        <br><br>
+    </table>
+</div>
+
+<br>
+<br>

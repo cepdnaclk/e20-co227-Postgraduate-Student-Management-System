@@ -1,0 +1,51 @@
+<div class="modal">
+    <div class="modal-content">
+        
+        <div class="modal-header"> 
+            <h5 class="modal-title"><b>Assign/ Change Supervisor</b></h5>
+            <span class="close" (click)="closeAssignSupervisorByAdmin()">&times;</span>
+        </div><br>
+        
+        <div class="modal-form">
+            <form (ngSubmit)="assignSupervisor()">
+                <div class="RegisteredTable">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>ID</th>
+                                    <th>Supervisor Name</th>
+                                    <th>Email</th>
+                                    <th>No. of Supervisees</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of filteredData; let i = index">
+                                    <td>
+                                        <input type="radio" name="selectedSupervisor" [(ngModel)]="selectedSupervisor" [value]="row">
+                                    </td>
+                                    <td>{{ row.id }}</td>
+                                    <td>{{ row.fullName }}</td>
+                                    <td>{{ row.email }}</td>
+                                    <td>{{ row.noOfSupervisees }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <hr>
+                <!-- <button type="submit" style="width: 100px;">Assign</button> -->
+                <input type="submit" value="Assign" style="width: 40%; float: right; margin-right: 20px;" [disabled]="isLoading">
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Loading overlay -->
+<div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+/* Middle content */
+.middle-content-beforelog {
+    display: block;
+    width: calc(100% - 232px);
+    margin-left: 232px;
+    margin-right: 0px; 
+    padding-top: 0px;
+    transition: margin-right 0.3s ease;
+}
+
+@media only screen and (max-width: 800px) {
+    .middle-content-beforelog {
+        margin-left: 0px;
+        width: 100%;
+    }
+}

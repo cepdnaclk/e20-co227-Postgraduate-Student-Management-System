@@ -1,0 +1,33 @@
+<br>
+<div class="research-box">
+    
+    <div *ngIf="student.registrationNumber"><h4><b>{{ student.registrationNumber }}</b></h4></div>
+    <div *ngIf="!student.registrationNumber"><h4><b>{{ student.regNumber }}</b></h4></div>
+
+    <h6>{{ student.nameWithInitials }}</h6>
+    <h6>{{ student.programOfStudy }}</h6>
+    <h6>Registered Date</h6>
+    <h6>{{ student.status }}</h6>
+
+    <hr style="margin: 0px; margin-bottom: 8px; color: #c0c0c0; border-width: 1px; margin-top: 5px;">
+
+
+    <br>
+    <h5><b>Courses</b></h5>
+    <br>
+    <h6>Effective Date of Degree:</h6><br><br>
+
+    <div class="course-container">
+        <div class="course-box">Course 1</div>
+        <div class="course-box">Course 2</div>
+        <div class="course-box">Course 3</div>
+    </div>
+
+    <br>
+    <div class="course-container">
+        <div class="course-box">Course 4</div>
+        <div class="course-box">Course 5</div>
+        <div class="course-box">Course 6</div>
+    </div>
+</div>
+<br>

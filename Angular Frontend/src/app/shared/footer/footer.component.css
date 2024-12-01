@@ -1,0 +1,21 @@
+/* Footer */
+footer {
+    width: calc(100% - 232px);
+    text-align: left;
+    background-color: rgb(243, 243, 243);
+    color: gray;
+    position: absolute;
+    left: 232px;
+    z-index: 0;
+    font-size: 14px;
+}
+
+/* Hide Sidebar on Small Screens */
+@media only screen and (max-width: 800px) {
+    footer {
+        width: 100%;
+        left: 0px;
+        font-size: 12px;
+    }
+}
+

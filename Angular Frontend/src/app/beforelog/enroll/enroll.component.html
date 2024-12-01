@@ -1,0 +1,217 @@
+
+<img src="images/enrollPage.png" alt="Students" style="width:100%;">
+
+<br>
+<br>
+<div class="form-container">
+    <form (submit)="onEnrollSubmit(enrollForm)" method="post" #enrollForm="ngForm">
+        <table style="width: 100%;">
+            <tr>
+                <td>Name with Initials</td>
+                <td><input type="text" name="nameWithInitials" [(ngModel)]="studentData.nameWithInitials" placeholder="Your Name..." required #nameInput="ngModel"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <!-- Error message for name -->
+                    <div *ngIf="nameInput.invalid && nameInput.touched" class="error-message">
+                        <small *ngIf="nameInput.errors?.['required']">Name is required.</small>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Full Name</td>
+                <td><input type="text" name="fullName" [(ngModel)]="studentData.fullName" placeholder="Your Full Name..." required #fullnameInput="ngModel"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <!-- Error message for full name -->
+                    <div *ngIf="fullnameInput.invalid && fullnameInput.touched" class="error-message">
+                        <small *ngIf="nameInput.errors?.['required']">Full Name is required.</small>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Contact Number</td>
+                <td><input type="tel" name="contactNumber" [(ngModel)]="studentData.contactNumber" placeholder="Contact Number..." required pattern="^0\d{9}$" #contactNum="ngModel"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <!-- Error message display -->
+                    <div *ngIf="contactNum.invalid && (contactNum.dirty || contactNum.touched)" class="error-message">
+                        <small *ngIf="contactNum.errors?.['required']">Contact Number is required.</small>
+                        <small *ngIf="contactNum.errors?.['pattern']">Invalid contact number format.</small>
+                    </div>
+                </td>
+            </tr>
+                
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" [(ngModel)]="studentData.email" placeholder="Email Address..." required email #emailInput="ngModel"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error-message">
+                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
+                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td><textarea name="address" [(ngModel)]="studentData.address" rows="4" required #addressInput="ngModel"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div *ngIf="addressInput.invalid && (addressInput.dirty || addressInput.touched)" class="error-message">
+                        <small *ngIf="addressInput.errors?.['required']">Address is required.</small>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- New File Inputs for Student ID and Birth Certificate -->
+            <tr>
+                <td><label for="studentIdDocument">Student ID Document:</label></td>
+                <td><input type="file" id="studentIdDocument" (change)="onStudentIdChange($event)" required></td>
+            </tr>
+            <br>
+
+            <tr>
+                <td><label for="birthCertificate">Birth Certificate:</label></td>
+                <td><input type="file" id="birthCertificate" (change)="onBirthCertificateChange($event)" required></td>
+            </tr>
+
+        </table>
+
+
+
+        <!-- <div>
+        <label for="studentIdDocument">Student ID Document:</label>
+        <input type="file" id="studentIdDocument" (change)="onStudentIdChange($event)" required>
+        </div>
+
+        <div>
+        <label for="birthCertificate">Birth Certificate:</label>
+        <input type="file" id="birthCertificate" (change)="onBirthCertificateChange($event)" required>
+        </div> -->
+
+        <br>
+        <hr>
+                            
+        <h5><b>Educational/Professional Qualifications</b></h5><br>
+                            
+                            
+        <!-- Dynamically generated sections for educational qualifications -->
+        <div *ngFor="let section of sections; let i = index">
+            <h6><b>Qualification {{ i + 1 }}</b></h6>
+            
+            <table style="width: 100%;">
+                <tr>
+                    <td><label for="university-{{ i }}">University / Institute</label></td>
+                    <td><input type="text" 
+                        name="educationalQualifications[{{i}}].university" 
+                        [(ngModel)]="section.university"
+                        placeholder="University..."
+                        required>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><label for="fromDate-{{ i }}">Start Date</label></td>
+                    <td><input type="date" 
+                        name="educationalQualifications[{{i}}].fromDate" 
+                        [(ngModel)]="section.fromDate" 
+                        required>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><label for="toDate-{{ i }}">End Date</label></td>
+                    <td><input type="date" 
+                        name="educationalQualifications[{{i}}].toDate" 
+                        [(ngModel)]="section.toDate" 
+                        required>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><label for="degree-{{ i }}">Degree</label></td>
+                    <td><input type="text" 
+                        name="educationalQualifications[{{i}}].degree" 
+                        [(ngModel)]="section.degree"
+                        placeholder="Degree..."
+                        required>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td><label for="field-{{ i }}">Field of Study</label></td>
+                    <td><input type="text" 
+                        name="educationalQualifications[{{i}}].field" 
+                        [(ngModel)]="section.field"
+                        placeholder="Field..."
+                        required>
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td><label for="file-{{ i }}">Attach File</label></td>
+                    <td><input type="file" (change)="onFileChange($event, i)" required></td>
+                </tr>
+        
+                <tr>
+                    <td colspan="2">
+                        <div style="justify-content: flex-end;" class="myButtonDesign" *ngIf="sections.length > 1" > 
+                            <a (click)="removeSection()" class="my-button">Remove Section</a>
+                        </div>
+                    </td>
+                </tr>
+                <div *ngIf="sections.length > 1"><br></div>
+
+            </table>
+        </div>
+
+        <div *ngIf="sections.length === 1"><br></div>
+        <!-- Add Section Button -->
+        <div class="myButtonDesign">
+            <a (click)="addSection()" class="my-button">Add Section</a>
+        </div>
+        
+        <br><br><br>
+        <h5><b>List of Publications</b></h5>
+        <textarea name="publications" [(ngModel)]="studentData.publications" rows="4" style="width: 100%;"></textarea>
+        
+        
+        <br><br><hr>
+        <h5><b>Proposed Program of Study</b></h5>
+        <select name="programOfStudy" [(ngModel)]="studentData.programOfStudy" required #selectProgramInput="ngModel">
+            <option value="PhD">PhD</option>
+            <option value="MPhil">MPhil</option>
+        </select>
+        <div *ngIf="selectProgramInput.invalid && (selectProgramInput.dirty || selectProgramInput.touched)" class="error-message">
+            <small *ngIf="selectProgramInput.errors?.['required']">Program of Study is required.</small>
+        </div>
+        
+        <br><br><hr><br><br>
+        <!-- Error message display -->
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <input type="submit" value="Submit"><br><br>
+    </form>
+</div>
+
+
+<!-- Loading overlay -->
+<div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>

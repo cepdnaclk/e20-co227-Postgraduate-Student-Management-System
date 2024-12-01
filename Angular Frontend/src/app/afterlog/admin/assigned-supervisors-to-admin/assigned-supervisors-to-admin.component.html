@@ -1,0 +1,32 @@
+<div class="topic">
+    <h1>Assigned Supervisors</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Reg. No</th>
+                <th>Student Name</th>
+                <th>Supervisor Name</th>
+                <!-- <th>Add Records</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of filteredData">
+                <td>
+                    <a [routerLink]="['/afterlog/student-profile-to-admin', row.regNumber]">
+                        {{ row.registrationNumber }}
+                    </a>
+                </td>
+                <td>{{ row.nameWithInitials }}</td>
+                <td>{{ row.supervisorFullName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br><br><br><br>

@@ -1,0 +1,45 @@
+<div class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title"><b>Edit Profile of {{ regNumber }}</b></h5>
+            <span class="close" (click)="closeEditProfileHeader()">&times;</span>
+        </div><br>
+        
+        <div class="modal-form">            
+            <form (ngSubmit)="onSubmit()">
+                <table class="form-tables" style="width: 100%;">
+                    <tr>
+                        <td>Reg. Number:</td>
+                        <td><input type="text" name="title" [(ngModel)]="student.registrationNumber" placeholder="Reg Number..."></td>
+                    </tr>
+                    <tr>
+                        <td>Name with Initials:</td>
+                        <td><input type="text" name="name" [(ngModel)]="student.nameWithInitials" placeholder="Name..."></td>
+                    </tr>
+                    <tr>
+                        <td>Program of Study:</td>
+                        <td><input type="text" name="program" [(ngModel)]="student.programOfStudy" placeholder="Program..."></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Registered Date:</td>
+                        <td><input type="date" name="registeredDate" [(ngModel)]="student.registeredDate" placeholder="Registered Date..."></td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>
+                            <select name="status" [(ngModel)]="student.status">
+                                <option value="Provicial Registered">Provicial Registered</option>
+                                <option value="Fully Registered">Fully Registered</option>
+                            </select>
+                        </td>
+                    <br>
+
+                </table>
+                <hr>
+                <input type="submit" value="Edit Profile" style="width: 40%; float: right;">
+            </form>
+        </div>
+    </div>
+</div>

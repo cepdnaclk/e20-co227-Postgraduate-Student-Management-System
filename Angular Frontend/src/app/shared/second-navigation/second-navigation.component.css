@@ -1,0 +1,71 @@
+/* Second Navigation Bar */
+.secondnavigation {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: calc(100% - 232px);
+    float: right;
+}
+.secondnavigation img {
+    margin-left: 10px;
+    margin-right: auto;
+}
+.myDropdown {
+    position: relative;
+    margin-right: 10px;
+}
+.myDropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 10px 13px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 7px;
+    position: relative;
+    transition: color 0.3s;
+    cursor: pointer; /* Ensures the button shows a pointer */
+}
+.myDropdown .dropbtn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.myDropdown .dropbtn:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    top: 100%; /* Position the dropdown below the button */
+    left: 0;
+    overflow: hidden;
+}
+.dropdown-content.show {
+    display: block;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+}

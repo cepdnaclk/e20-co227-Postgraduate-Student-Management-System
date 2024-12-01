@@ -1,0 +1,44 @@
+<div class="topic">
+    <h1>Postgraduate Students</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Reg. No</th>
+                    <th>Student Name With Initials</th>
+                    <!-- <th>Student FullNmae</th> -->
+                    <th>Submission Title</th>
+                    <th>Status</th>
+                    <th>Deadline to Review</th>
+                    <!-- <th>Program Of Study</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of filteredData">
+                    <td>
+                        <a [routerLink]="['/afterlog/student-profile-to-examiner', row.regNumber]">
+                            {{ row.regNumber }}
+                        </a>
+                    </td>
+                    <td>{{ row.nameWithInitials }}</td>
+                    <td>{{ row.id }} {{ row.title }}</td>
+                    <td>{{ row.submissionStatus }}</td>
+                    <td>{{ row.deadlineToReview }}</td>
+                    <!-- <td>{{ row.address }}</td>
+                    <td>{{ row.programOfStudy }}</td> -->
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </div>
+    <!-- <button (click)="navigateToStudentProfileToExaminer()" class="btn btn-primary btn-lg">Students</button><br><br> -->
+</div>
+<br><br><br><br><br>

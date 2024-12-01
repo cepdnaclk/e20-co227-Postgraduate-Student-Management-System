@@ -1,0 +1,127 @@
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 40px;
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 5% auto; /* 15% from the top and centered */
+padding: 10px;
+border: 1px solid #888;
+width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.modal-header {
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+padding: 0px; /* Adjust padding as needed */
+padding-bottom: 10px;
+}
+
+.modal-title {
+flex-grow: 1;
+text-align: center;
+margin: 0;
+}
+
+.close {
+position: absolute;
+right: 10px; /* Align the close button to the right edge */
+cursor: pointer;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.modal-form input[type=submit] {
+width: 100%;
+background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));
+color: white;
+padding: 10px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.modal-form input[type=submit]:hover {
+background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(18, 55, 71, 1));
+}
+
+/* Action Buttons */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+    
+.upload-btn,
+.clear-btn {
+    padding: 5px 50px;
+    font-size: 16px;
+    border: 2px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+    
+.upload-btn {
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(95, 158, 160, 1));
+    color: white;
+}
+    
+.upload-btn:hover {
+    background: linear-gradient(135deg, rgba(18, 55, 71, 1), rgba(18, 55, 71, 1));
+    color: white;
+}
+    
+.clear-btn {
+    border-color: rgba(0, 0, 0, 0.568);
+    border-width: 1px;
+    color: black;
+}
+    
+/* .clear-btn:hover {
+    background-color: #c82333;
+    color: white;
+} */
+
+@media screen and (max-width: 900px) {
+    .modal-content{
+        width: 80%;
+    }
+    }
+    @media screen and (max-width: 700px) {
+    .modal-content{
+        width: 80%;
+    }
+    .modal-form {
+        width: 80%;
+    }
+    }
+    @media screen and (max-width: 450px) {
+    .modal-content{
+        width: 95%;
+        font-size: 12px;
+    }
+    .modal-form {
+        width: 95%;
+    }
+}

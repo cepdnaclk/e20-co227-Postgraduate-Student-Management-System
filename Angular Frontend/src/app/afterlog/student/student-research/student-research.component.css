@@ -1,0 +1,16 @@
+.research-box {
+    background-color: rgb(243, 243, 243);
+    width: auto;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.nav-link.active {
+    background-color: rgba(47, 79, 79, 0.9);
+    color: white;
+}
+  
+.tab-content {
+margin-top: 20px;
+}

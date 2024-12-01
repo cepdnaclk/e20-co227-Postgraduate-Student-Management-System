@@ -1,0 +1,44 @@
+<div class="topic">
+    <h1>Postgraduate Students</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Reg. No</th>
+                    <th>Student Name With Initials</th>
+                    <th>Student FullNmae</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Program Of Study</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of filteredData">
+                    <td>
+                        <a [routerLink]="['/afterlog/student-profile-to-admin', row.regNumber]">
+                            {{ row.regNumber }}
+                        </a>
+                    </td>
+                    <td>{{ row.nameWithInitials }}</td>
+                    <td>{{ row.fullName }}</td>
+                    <td>{{ row.contactNumber }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.address }}</td>
+                    <td>{{ row.programOfStudy }}</td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<br><br><br><br><br>

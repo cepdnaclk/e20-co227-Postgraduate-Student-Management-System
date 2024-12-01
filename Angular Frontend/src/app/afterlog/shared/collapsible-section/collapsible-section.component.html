@@ -1,0 +1,40 @@
+<div class="collapsible-container">
+
+  <div class="collapsible-header">
+    <button (click)="toggleCollapse()">
+      <span [ngClass]="{'arrow-collapsed': isCollapsed, 'arrow-expanded': !isCollapsed}">
+        <i [ngClass]="isCollapsed ? 'fa fa-arrow-down-short-wide' : 'fa fa-arrow-up-wide-short'" style="font-size: 18px; color: rgba(18, 55, 71, 1);"></i>
+      </span>
+      <div style="font-size: 16px; margin-left: 8px; color: rgba(18, 55, 71, 1); font-weight: 1000;">{{ buttonName }}</div>
+    </button>
+
+    <div>
+        <!-- Delete button, visible only to admins -->
+      <button *ngIf="userRole === 'ADMIN'" (click)="openDeleteSectionPopup()" style="float: right; margin-right: 10px; font-size: 14px;">
+        <i class="fa fa-trash"></i>Delete
+      </button>
+      <app-delete-section-popup *ngIf="isDeleteSectionPopupOpen" [id]="id" (close)="closeDeleteSectionPopup()"></app-delete-section-popup>
+
+
+        <!-- Edit button, visible only to admins -->
+      <button *ngIf="userRole === 'ADMIN'" (click)="openModal()" style="float: right; margin-right: 10px; font-size: 14px;">
+        <i class="fa fa-edit"></i>Edit
+      </button>
+      <app-create-collapsible-section *ngIf="isModalOpen" (close)="closeModal()" [id]="id" [regNumber]="regNumber" [activeTab]="activeTab"></app-create-collapsible-section>
+
+    </div>
+  </div>
+
+  <div [ngClass]="{'content-collapsed': isCollapsed, 'content-expanded': !isCollapsed}">
+    
+    <div *ngFor="let tile of tiles">
+      <hr style="margin: 0px; margin-bottom: 8px; color: #c0c0c0; border-width: 1px;">
+      <app-feedback-tile *ngIf="tile.type === 'forum'" [title]="tile.title" [id]="tile.id"></app-feedback-tile>
+      <app-assignment-submission-tile *ngIf="tile.type === 'submission'" [title]="tile.title" [id]="tile.id"></app-assignment-submission-tile>
+      <app-final-assignment-submission-tile *ngIf="tile.type === 'finalSubmission'" [title]="tile.title" [id]="tile.id"></app-final-assignment-submission-tile>
+      <app-viva-tile *ngIf="tile.type === 'viva'" [title]="tile.title" [id]="tile.id"></app-viva-tile>
+    </div>
+  </div>
+
+  
+</div>

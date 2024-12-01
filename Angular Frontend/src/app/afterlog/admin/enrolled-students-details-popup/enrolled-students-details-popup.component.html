@@ -1,0 +1,294 @@
+<div class="modal">
+    <div class="modal-content">
+
+      <div *ngIf="mode === 'seeQualification'">
+        <div class="modal-header">           
+            <h5 class="modal-title"><b>Student Educational Details</b></h5>
+            <span class="close" (click)="closeEnrolledStudentsDetailsPopup()">&times;</span>
+        </div>
+        <br>
+        
+        <div class="modal-form">
+            <!-- Loading Indicator -->
+            <div *ngIf="isLoading">
+                <p>Loading student details...</p>
+            </div>
+            
+            <!-- Error Message Display -->
+            <div *ngIf="errorMessage">
+                <p class="error">{{ errorMessage }}</p>
+            </div>
+            
+            <!-- Student Details Section -->
+            <div *ngIf="student">
+                <h6><b>{{ student.fullName }}'s Details</b></h6>
+
+                <table>
+                  <tr>
+                    <td>ID:</td>
+                    <td>{{ student.id }}</td>
+                  </tr>
+                  <tr>
+                    <td>Registration Number:</td>
+                    <td>{{ student.registrationNumber }}</td>
+                  </tr>
+                  <tr>
+                    <td>Name with Initials:</td>
+                    <td>{{ student.nameWithInitials }}</td>
+                  </tr>
+                  <tr>
+                    <td>Contact Number:</td>
+                    <td>{{ student.contactNumber }}</td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td>{{ student.email }}</td>
+                  </tr>
+                  <tr>
+                    <td>Address:</td>
+                    <td>{{ student.address }}</td>
+                  </tr>
+                  <tr>
+                    <td>Program of Study:</td>
+                    <td>{{ student.programOfStudy }}</td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td>
+                    <td>{{ student.status }}</td>
+                  </tr>
+                  <tr>
+                    <td>National Identity:</td>
+                    <td>
+                      <a href="javascript:void(0)" (click)="download(student.studentIdDocument, student.studentIdDocumentOriginalName)">
+                        {{ student.studentIdDocumentOriginalName }}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Birth Certificate</td>
+                    <td>
+                      <a href="javascript:void(0)" (click)="download(student.birthCertificate, student.birthCertificateOriginalName)">
+                        {{ student.birthCertificateOriginalName }}
+                      </a>
+                    </td>
+                  </tr>
+                  <br>
+                </table>
+                
+                <h6><b>Educational Qualifications</b></h6>
+                <!-- Loop through educational qualifications -->
+                <div *ngFor="let eq of student.educationalQualifications; let i = index">
+
+                  <h6 style="margin-left: 40px;"><u>Qualification {{ i+1 }}</u></h6>
+                  <table>
+                    <tr>
+                      <td>Degree:</td>
+                      <td>{{ eq.degree }}</td>
+                    </tr>
+                    <tr>
+                      <td>University:</td>
+                      <td>{{ eq.university }}</td>
+                    </tr>
+                    <tr>
+                      <td>Field:</td>
+                      <td>{{ eq.field }}</td>
+                    </tr>
+                    <tr>
+                      <td>From:</td>
+                      <td>{{ eq.fromDate | date }}</td>
+                    </tr>
+                    <tr>
+                      <td>To:</td>
+                      <td>{{ eq.toDate | date }}</td>
+                    </tr>
+                    <br>
+
+                    <p><i>Attachments</i></p>
+                    
+                    <tr>
+                      <td>File:</td>
+                      <td *ngIf="eq.attachments && eq.attachments.length > 0">
+                        <a href="javascript:void(0)" (click)="download(eq.attachments[0].fileName, eq.attachments[0].originalFileName)">
+                          {{ eq.attachments[0].originalFileName }}
+                        </a>
+                      </td>
+                      <td *ngIf="eq.attachments && eq.attachments.length === 0">No attachment available.</td>
+                    </tr>
+                    
+                    
+                    
+                    <!-- <div *ngIf="eq.attachments && eq.attachments.length > 0">
+                        <h4>Attachments</h4>
+                        <ul>
+                            <li *ngFor="let attachment of eq.attachments">
+                                <a [href]="attachment.fileUrl" target="_blank" rel="noopener noreferrer">
+                                    {{ attachment.originalFileName }}
+                                </a> -->
+                                <!-- Optionally display file type and size
+                                <span> ({{ attachment.fileType }}, {{ attachment.fileSize }} KB)</span> -->
+                            <!-- </li>
+                        </ul>
+                    </div>
+                    <div *ngIf="eq.attachments && eq.attachments.length === 0">
+                        <p>No attachments available.</p>
+                    </div> -->
+                    <br><br>
+                  </table>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div *ngIf="mode === 'edit'">
+        <div class="modal-header">           
+          <h5 class="modal-title"><b>Edit Student Details</b></h5>
+          <span class="close" (click)="closeEnrolledStudentsDetailsPopup()">&times;</span>
+        </div>
+        <br>
+      
+        <div class="modal-form">            
+          <form (ngSubmit)="onSubmit()">
+            <!-- Loading Indicator -->
+            <div *ngIf="isLoading">
+              <p>Loading student details...</p>
+            </div>
+            
+            <!-- Error Message Display -->
+            <div *ngIf="errorMessage">
+                <p class="error">{{ errorMessage }}</p>
+            </div>
+            
+            <!-- Student Details Section -->
+            <div *ngIf="student">
+              <h6><b>{{ student.fullName }}'s Details</b></h6>
+
+              <table class="form-tables" style="width: 100%;">
+                <tr>
+                  <td>Reg. Number:</td>
+                  <td><input type="text" name="title" [(ngModel)]="student.registrationNumber" placeholder="Reg Number..."></td>
+                </tr>
+
+                <tr>
+                  <td>Name with Initials:</td>
+                  <td><input type="text" name="nameWithInitials" [(ngModel)]="student.nameWithInitials" placeholder="Name with Initials..."></td>
+                </tr>
+
+                <tr>
+                  <td>Full Name:</td>
+                  <td><input type="text" name="fullName" [(ngModel)]="student.fullName" placeholder="Full name..."></td>
+                </tr>
+
+                <tr>
+                  <td>Contact Number:</td>
+                  <td><input type="tel" name="contactNumber" [(ngModel)]="student.contactNumber" placeholder="Contact Number..."></td>
+                </tr>
+
+                <tr>
+                  <td>Email:</td>
+                  <td><input type="email" name="email" [(ngModel)]="student.email" placeholder="Email..."></td>
+                </tr>
+
+                <tr>
+                  <td>Address:</td>
+                  <td>{{ student.address }}</td>
+                </tr>
+
+                <tr>
+                  <td>Program of Study:</td>
+                  <td>{{ student.programOfStudy }}</td>
+                </tr>
+
+                <tr>
+                  <td>Registered Date:</td>
+                  <td><input type="date" name="date" [(ngModel)]="student.registeredDate" placeholder="Registered date..."></td>
+                </tr>
+
+                <tr>
+                  <td>Educational Status:</td>
+                  <td>
+                    <select name="status" [(ngModel)]="student.status">
+                      <option value="Provicial Registered">Provicial Registered</option>
+                      <option value="Fully Registered">Fully Registered</option>
+                    </select>
+                  </td>
+                </tr>
+                <br>
+
+              </table>
+              <hr>
+                <input type="submit" value="Edit Details" style="width: 40%; float: right;">
+            </div>
+          </form>
+        </div>
+              
+      </div>
+
+    </div>
+</div>
+<br><br><br><br>
+
+<!-- 
+
+<div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">            
+        <h5 class="modal-title"><b>Add Staff Members</b></h5>
+        <span class="close" (click)="closeAddStaffMembersByAdmin()">&times;</span>
+      </div><br>
+      
+      <div class="modal-form">
+        <form>
+          <table class="form-tables" style="width: 100%;">
+  
+            <tr>
+              <td>Email:</td>
+              <td><input type="email" name="email" [(ngModel)]="staffMember.email" placeholder="Email Address..."></td>
+            </tr>
+            <tr *ngIf="!isStaffMemberChecked">
+              <td colspan="2">
+                <hr>
+                <input type="button" (click)="onCheckPresentStaffMember()" value="Check" style="width: 40%; float: right;">
+              </td>
+            </tr>
+          </table>
+  
+          <table class="form-tables" style="width: 100%;" *ngIf="isStaffMemberChecked">
+  
+            <tr>
+              <td>Name:</td>
+              <td><input type="text" name="name" [(ngModel)]="staffMember.name" placeholder="Name..."></td>
+            </tr>
+            
+            <h6 style="padding-top: 10px;"><b>Positions</b></h6>
+            <tr>
+              <td>
+                <input type="checkbox" id="option1" name="roles" value="SUPERVISOR"
+                  (change)="onCheckboxChange($event)"
+                  [checked]="staffMember.roles.includes('SUPERVISOR')">
+              </td>
+              <td><label for="option1">Supervisor</label></td>
+            </tr>
+            
+            <tr>
+              <td>
+                <input type="checkbox" id="option2" name="roles" value="EXAMINER"
+                  (change)="onCheckboxChange($event)"
+                  [checked]="staffMember.roles.includes('EXAMINER')">
+              </td>
+              <td><label for="option2">Examiner</label></td>
+            </tr>
+          
+            <tr>
+              <td colspan="2">
+                <hr>
+                <input type="button" (click)="onSubmit()" value="Send" style="width: 40%; float: right;">
+              </td>
+            </tr>
+  
+          </table>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+   -->

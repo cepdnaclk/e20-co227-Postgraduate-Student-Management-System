@@ -1,0 +1,103 @@
+/* Left Sidebar */
+.sidebar-left {
+    width: 220px;
+    /* background-color: rgba(18, 55, 71, 0.8); */
+    padding: 15px;
+    box-shadow: 5px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    top: 0px;
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: space-between; /* Space between elements */
+    
+    background: 
+    /* Solid color layer */
+    linear-gradient(to bottom, rgba(18, 55, 71, 0.9), rgba(18, 55, 71, 0.9)),
+    /* Image layer */
+    url('/images/slide-4New.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.sidebar-content {
+    flex-grow: 1; /* Grow this area to fill available space */
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar-left ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    font-size: 17px;
+}
+
+.sidebar-left ul li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar-left ul li.active a {
+    background-color: rgba(255, 255, 255, 0.6); /* Change to a more prominent color to indicate active status */
+    color: black; /* Change text color when active */
+    font-weight: 600;
+}
+
+.sidebar-left ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for links */
+}
+
+.sidebar-left ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Change hover background color to be more visible */
+}
+
+.second-dropdown {
+    margin-left: 30px;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.sidebar-left ul .second-dropdown li a{
+    padding: 5px;
+    font-size: 14px;
+}
+
+.first-dropdown {
+    margin-left:10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Dropdown Toggle Styling */
+.dropdown-toggle {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Same styling as other links */
+    border-radius: 4px;
+}
+
+.dropdown-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Change hover background color to be more visible */
+}
+
+/* Dropdown Toggle Styling */
+.sidebar-footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Hide Sidebar on Small Screens */
+@media only screen and (max-width: 800px) {
+    .sidebar-left {
+        display: none; /* Hide the sidebar */
+    }
+}

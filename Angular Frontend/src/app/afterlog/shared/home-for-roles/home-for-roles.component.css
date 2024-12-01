@@ -1,0 +1,6 @@
+/* Full Width Image */
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}

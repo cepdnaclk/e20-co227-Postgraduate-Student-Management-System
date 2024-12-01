@@ -1,0 +1,29 @@
+<div class="sidebar-right" id="rightSidebar">
+    <button type="button" class="btn btn-outline-secondary btn-sm close-btn" id="hideSidebarBtn"><i class="fa fa-xmark"></i></button>
+    <br><h5 style="margin-top: 0px;"><b>Research</b></h5>
+    <ul>
+      <li><a href="#topic1">Research Areas/ Themes</a></li>
+      <li><a href="#topic2">Laboratories/ Resources</a></li>
+      <li><a routerLink="/afterlog/mphil-phd-research">MPhil & PhD Research</a></li>
+      <li><a href="#topic4">University Research Grants</a></li>
+      <li><a href="#topic5">University Research Sessions</a></li>
+      <li><a href="#topic6">Conferences/ Symposia</a></li>
+      <li><a href="#topic7">Partnerships/ Opportunities</a></li>
+    </ul>
+    <h5 style="margin-top: 0px; cursor: pointer;"><b><a (click)="navigateToCalendar()">Calendar</a></b></h5><br>
+    
+    <!-- <div class="rightSidebarCalendar"><full-calendar [options]="calendarOptions"></full-calendar></div> -->
+    <div class="sidebarCalendar"><div id="sidebar-calendar"></div></div>
+
+    <br><br>
+    <h5 style="margin-top: 0px;"><b>External Links</b></h5>
+    <ul>
+      <li><a href="http://www.nsf.ac.lk/">NSF</a></li>
+      <li><a href="https://www.nrc.gov.lk/">NRC</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+</div>
+
+<button type="button" class="btn btn-secondary toggle-btn" id="showSidebarBtn"><i class="fa fa-chevron-left"></i></button>

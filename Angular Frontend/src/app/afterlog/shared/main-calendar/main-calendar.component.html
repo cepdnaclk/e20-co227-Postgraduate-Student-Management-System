@@ -1,0 +1,17 @@
+
+<div style="display: flex;">
+    <div class="myButtonDesign" style="width: 250px;">
+        <a (click)="openCreateCalendarEvent()" class="my-button" style="margin-left: 40px;">New Event</a>
+    </div>
+    <div class="myButtonDesign">
+        <a (click)="deleteLastSelectedEvent()" class="my-button" [title]="!lastSelectedEventId ? 'Select Event to delete.' : ''">Delete Event</a>
+    </div>
+</div>
+
+<app-create-calendar-event *ngIf="isCreateCalendarEventOpen" (close)="closeCreateCalendarEvent()"></app-create-calendar-event>
+
+<br>
+
+<div class="mainCalendar"><div id="main-calendar"></div></div>
+
+<br>

@@ -1,0 +1,109 @@
+<br>
+<div class="Edit-profile-top">
+    <div class="dp">
+        <!-- Show profile picture if it exists, otherwise show default icon -->
+        <img *ngIf="isThereProfilePicture" [src]="profilePictureUrl" alt="Profile Picture" style="width: 170px; height: 170px; border-radius: 50%; margin-top: 10px;">
+        <div *ngIf="!isThereProfilePicture">
+            <i class="fa fa-circle-user" style="font-size: 150px; margin-top: 20px;"></i>
+        </div>
+    </div>
+    <div class="profile-box">
+        <h3> {{ student.regNumber }}</h3>
+        <h5>{{ student.nameWithInitials }}</h5>
+        <h5> {{student.programOfStudy }}</h5>
+        <h5>Registered Date: {{student.registeredDate}}</h5>
+        <h5>{{ student.status}}</h5>
+    </div>
+    
+</div>
+
+
+
+<br>
+<div class="research-box">
+    
+    <div class="form-container">
+        <form (submit)="onEditProfileSubmit()" method="post">
+
+            <h4>General</h4>
+            <table class="form-tables">
+                <tr>
+                    <td>Reg Number</td>
+                    <td><input type="text" name="regNumber" [(ngModel)]="student.regNumber" placeholder="Reg Number..." disabled></td>
+                </tr>
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" name="nameWithInitials" [(ngModel)]="student.nameWithInitials" placeholder="Surname..."></td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td><input type="tel" name="contactNumber" [(ngModel)]="student.contactNumber" placeholder="Contact Number..."></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" [(ngModel)]="student.email" name="email" placeholder="Email Address..."></td>
+                </tr>
+                <tr>
+                    <div class="myButtonDesign">
+                        <a (click)="navigateToPasswordChange()" class="my-button">Change Password</a>
+                    </div>
+                </tr>
+            </table>
+            <hr>
+            
+            <h4>User Picture</h4>
+            <table class="form-tables">
+                <tr>
+                    <td>Current Picture</td>
+                    <td>
+                        <i *ngIf="!isThereProfilePicture" class="fa fa-circle-user" style="font-size: 100px;"></i>
+                        <img *ngIf="isThereProfilePicture" [src]="profilePictureUrl" alt="Profile Picture"  style="width: 100px; height: 100px; border-radius: 50%;">
+                        <!-- <label style="font-size: 14px;"><input type="checkbox" name="agree" value="terms"> Delete picture</label> -->
+                        <br><label style="font-size: 14px;">
+                            <input type="checkbox" [(ngModel)]="deletePictureChecked" name="deletePictureChecked"> Delete picture
+                        </label>
+                        
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>New Picture</td>
+                    <td><input type="file" (change)="onFileSelected($event)">
+                    </td>
+                </tr>
+                <br>
+                <!-- <tr>
+                    <td>Picture Description</td>
+                    <td><input type="text" name="pictureDescription" placeholder="Picture Description..."></td>
+                </tr> -->
+            </table>
+            <!-- <hr>
+
+            <h4>Optional</h4>
+            <table class="form-tables">
+                <tr>
+                    <td>ID Number</td>
+                    <td><input type="text" name="idNumber" placeholder="ID..."></td>
+                </tr>
+                <tr>
+                    <td>Institution</td>
+                    <td><input type="text" name="instution" placeholder="Institution..."></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" placeholder="Email Address..."></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="address" rows="4"></textarea></td>
+                </tr>
+            </table>
+            <hr> -->
+            
+            <br>
+            <input type="submit" value="Update Profile"><br><br>
+        </form>
+    </div>
+    <br>
+    
+</div>

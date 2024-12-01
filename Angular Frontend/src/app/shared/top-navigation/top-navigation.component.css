@@ -1,0 +1,173 @@
+/* Top Navigation Bar */
+ul.topnav {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 232px);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(243, 243, 243);
+    height: 44px;
+    left: 232px;
+    z-index: 2;
+}
+ul.topnav li {float: left;}
+
+ul.topnav li button {
+  display: block;
+  background-color: rgb(243, 243, 243);
+  color: gray;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  border: none;
+  height: 44px;
+}
+
+ul.topnav li button.active {
+  background-color: rgb(243, 243, 243);
+  color: gray;
+}
+
+ul.topnav li.right {float: right;}
+
+ul.topnav li button.sandwitch{
+  display: none;
+}
+ul.topnav li.sandwitch2{
+  display: block;
+}
+
+/* Apply styles for screens less than 800px */
+@media screen and (max-width: 800px) {
+  ul.topnav {
+    width: 100%;
+    left: 0;
+  }
+  ul.topnav li button.sandwitch{
+    display: block;
+  }
+  /* Style the offcanvas sidebar */
+  .offcanvas-start {
+    width: 220px;
+    background-color: rgba(18, 55, 71, 0.95);
+    background-size: cover;
+    color: white;
+  }
+  
+}
+@media screen and (min-width: 800px) {
+  .offcanvas-start{
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  ul.topnav li.sandwitch2{
+    display: none;
+  }
+}
+/* @media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+} */
+
+
+.notify .badge {
+  /* Adjust position to fit your icon size */
+  transform: translate(-50%, -50%);
+  font-size: 8px; /* Adjust badge text size */
+  padding: 4px 4px; /* Adjust padding */
+}
+
+/* Target the icon directly */
+.right .pp {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+ul.topnav li button.dp {
+  padding: 0;
+}
+
+ul.topnav li button.notify {
+  border: none;
+}
+ul.topnav li button.notify:hover{
+  background-color: rgb(243, 243, 243);
+}
+
+
+/* For sidebar when minimized */
+.sidebar-content {
+  flex-grow: 1; /* Grow this area to fill available space */
+  overflow: hidden;
+  position: relative;
+}
+
+.offcanvas-body ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  font-size: 17px;
+}
+
+.offcanvas-body ul li {
+  margin: 10px 0;
+}
+
+.offcanvas-body ul li.active a {
+  background-color: rgba(255, 255, 255, 0.6); /* Change to a more prominent color to indicate active status */
+  color: black; /* Change text color when active */
+  font-weight: 600;
+}
+
+.offcanvas-body ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for links */
+}
+
+.offcanvas-body ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Change hover background color to be more visible */
+}
+
+.second-dropdown {
+  margin-left: 30px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.offcanvas-body ul .second-dropdown li a{
+  padding: 5px;
+  font-size: 14px;
+}
+
+.first-dropdown {
+  margin-left:10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Dropdown Toggle Styling */
+.dropdown-toggle {
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Same styling as other links */
+  border-radius: 4px;
+}
+
+.dropdown-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Change hover background color to be more visible */
+}
+
+/* Dropdown Toggle Styling */
+.sidebar-footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}

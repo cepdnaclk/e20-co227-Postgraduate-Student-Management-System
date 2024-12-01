@@ -1,0 +1,39 @@
+<div class="topic">
+    <h1>Assigned Examiners</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Student Reg. No</th>
+              <th>Student Name</th>
+              <th>Submission Title</th>
+              <th>Examiners</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of filteredData">
+              <td>{{ row.registrationNumber }}</td>
+              <td>{{ row.nameWithInitials }}</td>
+              <td>{{ row.title }}</td>
+              <td>
+                <!-- Loop through the examiners array and display each examiner -->
+                <ul>
+                  <li *ngFor="let examiner of row.examiners">{{ examiner }}</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    
+</div>
+<br><br><br><br><br>

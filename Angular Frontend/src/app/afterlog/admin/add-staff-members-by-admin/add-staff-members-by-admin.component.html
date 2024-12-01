@@ -1,0 +1,129 @@
+<div class="modal">
+    <div class="modal-content">
+        <div class="modal-header">            
+            <h5 class="modal-title"><b>Add Staff Members</b></h5>
+            <span class="close" (click)="closeAddStaffMembersByAdmin()">&times;</span>
+        </div><br>
+        
+        <div class="modal-form">
+            <form>
+                <table class="form-tables" style="width: 100%;">
+
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="email" name="email" [(ngModel)]="staffMember.email" placeholder="Email Address..."></td>
+                    </tr>
+                    <tr *ngIf="!isStaffMemberChecked">
+                        <td colspan="2">
+                            <hr>
+                            <input type="submit" (click)="onCheckPresentStaffMember()" value="Check" style="width: 40%; float: right;">
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="form-tables" style="width: 100%;" *ngIf="isStaffMemberChecked">
+
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" name="firstName" [(ngModel)]="staffMember.name" placeholder="Name..."></td>
+                    </tr>
+                    
+                    <h6 style="padding-top: 10px;"><b>Positions</b></h6>
+                    <tr>
+                        <td>
+                          <input type="checkbox" id="option1" name="roles" value="SUPERVISOR"
+                            (change)="onCheckboxChange($event)"
+                            [checked]="staffMember.roles.includes('SUPERVISOR')">
+                        </td>
+                        <td><label for="option1">Supervisor</label></td>
+                      </tr>
+                      
+                      <tr>
+                        <td>
+                          <input type="checkbox" id="option2" name="roles" value="EXAMINER"
+                            (change)="onCheckboxChange($event)"
+                            [checked]="staffMember.roles.includes('EXAMINER')">
+                        </td>
+                        <td><label for="option2">Examiner</label></td>
+                      </tr>
+                    
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                            <input type="submit" (click)="onSubmit()" value="Send" style="width: 40%; float: right;">
+                        </td>
+                    </tr>
+
+
+                </table>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 
+
+<div class="modal">
+    <div class="modal-content">
+      <div class="modal-header">            
+        <h5 class="modal-title"><b>Add Staff Members</b></h5>
+        <span class="close" (click)="closeAddStaffMembersByAdmin()">&times;</span>
+      </div><br>
+      
+      <div class="modal-form">
+        <form>
+          <table class="form-tables" style="width: 100%;">
+  
+            <tr>
+              <td>Email:</td>
+              <td><input type="email" name="email" [(ngModel)]="staffMember.email" placeholder="Email Address..."></td>
+            </tr>
+            <tr *ngIf="!isStaffMemberChecked">
+              <td colspan="2">
+                <hr>
+                <input type="button" (click)="onCheckPresentStaffMember()" value="Check" style="width: 40%; float: right;">
+              </td>
+            </tr>
+          </table>
+  
+          <table class="form-tables" style="width: 100%;" *ngIf="isStaffMemberChecked">
+  
+            <tr>
+              <td>Name:</td>
+              <td><input type="text" name="name" [(ngModel)]="staffMember.name" placeholder="Name..."></td>
+            </tr>
+            
+            <h6 style="padding-top: 10px;"><b>Positions</b></h6>
+            <tr>
+              <td>
+                <input type="checkbox" id="option1" name="roles" value="SUPERVISOR"
+                  (change)="onCheckboxChange($event)"
+                  [checked]="staffMember.roles.includes('SUPERVISOR')">
+              </td>
+              <td><label for="option1">Supervisor</label></td>
+            </tr>
+            
+            <tr>
+              <td>
+                <input type="checkbox" id="option2" name="roles" value="EXAMINER"
+                  (change)="onCheckboxChange($event)"
+                  [checked]="staffMember.roles.includes('EXAMINER')">
+              </td>
+              <td><label for="option2">Examiner</label></td>
+            </tr>
+          
+            <tr>
+              <td colspan="2">
+                <hr>
+                <input type="button" (click)="onSubmit()" value="Send" style="width: 40%; float: right;">
+              </td>
+            </tr>
+  
+          </table>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+   -->

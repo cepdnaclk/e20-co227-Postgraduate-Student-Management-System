@@ -1,0 +1,56 @@
+<div class="topic">
+  <h1 style="text-align: center;">Dashboard</h1>
+</div>
+
+<div class="event-box">
+  <h5>Events</h5><br>
+
+  <div class="even-container">
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(47, 79, 79, 0.9);">
+        <a (click)="navigateToStudentResearch()"><div class="image-box">
+          <i class="fa fa-users-rectangle" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToStudentResearch()" class="btnn">Research</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(0, 128, 128, 0.9);">
+        <a (click)="navigateToStudentCourses()"><div class="image-box">
+          <i class="fa fa-graduation-cap" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToStudentCourses()" class="btnn">Courses</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(25, 25, 112, 0.9);">
+        <a ><div class="image-box">
+          <i class="fa fa-user-tie" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button  class="btnn">Super</button>
+      </div>
+      <div class="content"></div>
+    </div>
+  </div>
+</div>
+<br>
+
+<!-- <button (click)="navigateToStudentResearch()" class="btn btn-primary btn-lg">Research</button><br><br>
+<button (click)="navigateToStudentCourses()" class="btn btn-primary btn-lg">Courses</button><br><br> -->
+
+
+<div class="event-box" style="padding: 0px;">
+  <h5>Calendar</h5>
+  <br>
+</div>
+
+<app-main-calendar></app-main-calendar>
+
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br>

@@ -1,0 +1,147 @@
+<div class="topic">
+  <h1 style="text-align: center;">Dashboard</h1>
+</div>
+
+<div class="event-box">
+  <h5>Events</h5><br>
+
+  <div class="even-container">
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(47, 79, 79, 0.9);">
+        <a (click)="navigateToEnrolledStudents()"><div class="image-box">
+          <i class="fa fa-users-rectangle" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToEnrolledStudents()" class="btnn">Enrolled Students</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(0, 128, 128, 0.9);">
+        <a (click)="navigateToStudentsToAdmin()"><div class="image-box">
+          <i class="fa fa-graduation-cap" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToStudentsToAdmin()" class="btnn">Students</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(25, 25, 112, 0.9);">
+        <a (click)="navigateToSupervisorsToAdmin()"><div class="image-box">
+          <i class="fa fa-user-tie" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToSupervisorsToAdmin()" class="btnn">Supervisors</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(95, 158, 160, 0.9);">
+        <a (click)="navigateToExaminersToAdmin()"><div class="image-box">
+          <i class="fa fa-user-pen" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToExaminersToAdmin()" class="btnn">Examiners</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(70, 130, 180, 0.9);">
+        <a (click)="navigateToReportSubmissionsToAdmin()"><div class="image-box">
+          <i class="fa fa-book-open" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToReportSubmissionsToAdmin()" class="btnn">Report Submissions</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-container" style="background-color: rgba(0, 139, 139, 0.9);">
+        <a (click)="navigateToVivasToAdmin()"><div class="image-box">
+          <i class="fa fa-microphone-lines" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToVivasToAdmin()" class="btnn">Vivas</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+
+
+
+<!-- <div class="myButtonDesign">
+  <a (click)="navigateToEnrolledStudents()" class="my-button">Registered Students</a>
+</div> -->
+<div class="event-box">
+  <h5>Functions</h5><br>
+
+  <div class="function-even-container">
+
+    <div class="function-card">
+      <div class="function-icon-container" style="background-color: rgba(47, 79, 79, 0.9);">
+        <a (click)="openAddStaffMembersByAdmin()"><div class="function-image-box">
+          <i class="fa fa-users" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="openAddStaffMembersByAdmin()" class="btnn functionBtn">Add Staff Members</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+  </div>
+
+  <div class="function-even-container">
+
+    <div class="function-card">
+      <div class="function-icon-container" style="background-color: rgba(0, 128, 128, 0.9);">
+        <a (click)="navigateToAssignedSupervisorsToAdmin()"><div class="function-image-box">
+          <i class="fa fa-users-viewfinder" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToAssignedSupervisorsToAdmin()" class="btnn functionBtn">Assign Supervisors</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+  </div>
+
+  <div class="function-even-container">
+
+    <div class="function-card">
+      <div class="function-icon-container" style="background-color: rgba(95, 158, 160, 0.9);">
+        <a (click)="navigateToAssignedExaminersToAdmin()"><div class="function-image-box">
+          <i class="fa fa-user-shield" style="font-size: 30px; color: white;"></i>
+        </div></a>
+        <button (click)="navigateToAssignedExaminersToAdmin()" class="btnn functionBtn">Assign Examiners</button>
+      </div>
+      <div class="content"></div>
+    </div>
+
+  </div>
+  
+</div>
+
+<br>
+
+<!-- <button (click)="openAddStaffMembersByAdmin()" class="btn btn-primary btn-lg">Add Staff Members</button><br><br> -->
+<app-add-staff-members-by-admin *ngIf="isAddStaffMembersByAdminOpen" (close)="closeAddStaffMembersByAdmin()"></app-add-staff-members-by-admin>
+
+
+<div class="event-box" style="padding: 0px;">
+  <h5>Calendar</h5>
+  <br>
+  <!-- <div class="myButtonDesign">
+    <a  class="my-button">New Event</a>
+  </div> -->
+</div>
+
+<app-main-calendar></app-main-calendar>
+
+
+<br>
+<br>
+<br>
+<br>

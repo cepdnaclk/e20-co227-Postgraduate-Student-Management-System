@@ -1,0 +1,21 @@
+ <div id="notificationPanel" class="notification-panel" [style.display]="notifications.length > 0 ? 'block' : 'none'">
+    <h6 style="text-align: center; color:rgb(0, 0, 54); margin:0px"><b>Notifications</b></h6>
+    <hr>
+    <ng-container *ngIf="notifications.length > 0; else noNotifications">
+      <p *ngFor="let notification of notifications" class="notification-item">
+        {{ notification.title }}
+        <!-- : {{ notification.message }}  -->
+        <span>{{ notification.timestamp | date:'short' }}</span>
+        
+        <!-- Add the button with the tick icon -->
+        <!-- <button class="tick-button"> -->
+          <button class="tick-button" (click)="markNotificationAsRead(notification.id)">
+          <i class="fa fa-check"></i>
+        </button>
+      </p>
+    </ng-container>
+    <ng-template #noNotifications>
+      <p>No new notifications.</p>
+    </ng-template>
+  </div>
+

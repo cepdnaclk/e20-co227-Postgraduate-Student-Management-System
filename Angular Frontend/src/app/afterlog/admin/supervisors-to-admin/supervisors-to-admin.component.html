@@ -1,0 +1,30 @@
+<div class="topic">
+    <h1>Supervisors</h1>
+</div>
+
+<div class = "RegisteredTable">
+
+    <div>
+        <input [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Supervisor Name</th>
+                <th>Email</th>
+                <th>No. of Supervisees</th>
+                <!-- <th>Add Records</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of filteredData">
+                <td>{{ row.id }}</td>
+                <td>{{ row.fullName }}</td>
+                <td>{{ row.email }}</td>
+                <td>{{ row.noOfSupervisees }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br><br><br><br><br>
