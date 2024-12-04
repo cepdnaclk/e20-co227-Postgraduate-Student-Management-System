@@ -28,8 +28,8 @@ __Installation Steps__
 Clone the repository:
 
 ```
-git clone https://github.com/your-repository-url.git
-cd pgsms-backend
+git clone https://github.com/cepdnaclk/e20-co227-Postgraduate-Student-Management-System/blob/6e0bf29f982d2c2936579c02c73a571e1fb9cd8f/SpringBoot%20Backend
+cd SpringBootBackend
 ```
 
 Configure the application properties:
