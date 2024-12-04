@@ -74,11 +74,9 @@ Frontend: Built with Angular, providing a responsive and user-friendly interface
 Database: Managed with MySQL, ensuring efficient data storage and retrieval.<br>
 Email Integration: Configured with Gmail SMTP for real-time email notifications.<br>
 
-## Other Sub Topics
 
-.....
 
-## Team
+## Group 17 Team
 -  E/20/197, Dasuni Kawya, [email](e20197@eng.pdn.ac.lk)
 -  E/20/211, Ishan Kumarasinghe, [email](e20211@eng.pdn.ac.lk)
 -  E/20/212, Sameera Kumarasinghe, [email](e20212@eng.pdn.ac.lk)
