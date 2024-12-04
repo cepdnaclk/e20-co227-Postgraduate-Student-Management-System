@@ -28,7 +28,7 @@ __Installation Steps__
 Clone the repository:
 
 ```
-git clone https://github.com/cepdnaclk/e20-co227-Postgraduate-Student-Management-System/blob/6e0bf29f982d2c2936579c02c73a571e1fb9cd8f/SpringBoot%20Backend
+git clone https://github.com/cepdnaclk/e20-co227-Postgraduate-Student-Management-System/tree/main/SpringBoot%20Backend
 cd SpringBootBackend
 ```
 
@@ -51,11 +51,6 @@ spring.mail.default-encoding=UTF-8
 ```
 
 Build and run the application:
-
-```
-mvn clean install
-mvn spring-boot:run
-```
 
 Access the API at http://localhost:8080.
 
