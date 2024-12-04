@@ -21,54 +21,58 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Other Sub Topics](#other-sub-topics)
-3. [Team](#team)
-4. [Links](#links)
+2. [Scope](#scope)
+3. [Technical Highlights](#technical-highlights)
+4. [Team](#team)
+5. [Links](#links)
 
 ---
 
 ## Introduction
 
-The Postgraduate Student Management System (PGSMS) is an innovative software solution designed to enhance administrative efficiency and academic monitoring within the Department of Computer Engineering at the University of Peradeniya. It is tailored specifically to streamline the management of postgraduate programs and to facilitate communication between students, staff, and administrators.
+The Postgraduate Students Management System (PGSMS) is a comprehensive platform designed to manage the academic and administrative processes related to MPhil efficiently. and PhD. students in the Department of Computer Engineering at the University of Peradeniya. This system addresses the challenges associated with traditional, manual processes by introducing streamlined, automated workflows that enhance operational efficiency, improve communication, and ensure effective monitoring of students’ academic progress. <br>
+The system is tailored to meet the specific needs of postgraduate programs, focusing on the lifecycle of a student’s academic journey, from registration to graduation. 
+
+![image](https://github.com/user-attachments/assets/665b9b81-106f-4871-8c9f-ccd065c82f12)
 
 
-### Key Features
 
-1. Student Enrollment and Approval Process
+## Scope
 
-   - Students submit an enrollment form with their academic and personal details.
-   - Administrators review applications for eligibility and approve them based on specific criteria.
-   - Enrolled students receive email notifications with login credentials to access the system.
+The scope of the PGSMS is to provide a centralized platform catering to the administrative and academic needs of postgraduate programs. It covers up:
 
+User Management 
+
+   - Admins can manage student and staff profiles. 
+   - Role-based functionalities ensure access is restricted to authorized users.
+
+Enrollment System 
+
+   - Students can submit their enrollment details online.
+   - Admins can review those details. 
+
+Submission and Evaluation Management 
+
+   - Submission portals for students to upload half-year and year-end reports.
+   - Examiners can provide detailed feedback and evaluations. 
+
+Examiner Assignment
+
+   - Admins can assign examiners for student submissions.
+   - The system checks and prevents duplicate or conflicting assignments. 
+
+Communication System 
+
+   - Automated email notifications for submission status, reminders, and evaluation feedback.
+   - Template for emails, customizable by the admin, ensures consistency.
   
-2. Staff Management
 
-   - Administrators can add and manage staff members.
-   - New staff members receive email notifications upon being added to the system.
+## Technical Highlights
 
-
-3. Research Process Management
-
-   - Facilitates the management of student research projects.
-   - Supports submission and review of evaluations (half-year and year-end) through dedicated submission links.
-
-
-4. Examiner Assignment and Feedback
-
-   - Admins can assign examiners to review student submissions.
-   - Examiners provide constructive feedback for student improvements.
-
-
-5. Email Notification System
-
-   - Ability to send emails to multiple recipients at once.
-   - Pre-defined and customizable email templates for communicating with students and staff.
-
-
-6. Role-Based Access Control (RBAC)
-
-   - Secure authentication and authorization using JWT tokens.
-   - Different access levels for admins, staff, and students to ensure data privacy and security.
+Backend: Developed using Spring Boot with REST API architecture, featuring JWT-based authentication and encrypted password storage.<br>
+Frontend: Built with Angular, providing a responsive and user-friendly interface.<br>
+Database: Managed with MySQL, ensuring efficient data storage and retrieval.<br>
+Email Integration: Configured with Gmail SMTP for real-time email notifications.<br>
 
 ## Other Sub Topics
 
