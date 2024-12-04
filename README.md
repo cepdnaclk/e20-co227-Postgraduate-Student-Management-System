@@ -40,6 +40,7 @@ The Postgraduate Student Management System (PGSMS) is an innovative software sol
 - Backend: Developed using Spring Boot with REST API architecture, featuring JWT-based authentication and encrypted password storage.
 - Frontend: Built with Angular, providing a responsive and user-friendly interface.
 - Database: Managed with MySQL, ensuring efficient data storage and retrieval.
+- Email Integration: Configured with Gmail SMTP for email notifications.
 
 
 ## Team:
