@@ -26,9 +26,7 @@ MySQL Database installed and running. <br>
 __Installation Steps__
 
 Clone the repository:
-'''
 
-'''
 ```
 git clone https://github.com/your-repository-url.git
 cd pgsms-backend
