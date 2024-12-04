@@ -1,7 +1,7 @@
 # Postgraduate-Student-Management-System_Backend
 The Postgraduate Student Management System (PGSMS) backend is a RESTful API developed using Spring Boot. It serves as the core of the application, managing data and business logic, and providing secure endpoints for the frontend to interact with.
 
-__Features__
+### Features
 
 - Student Management
 - Staff Management
@@ -9,16 +9,16 @@ __Features__
 - Email Notification System
 - Authentication and Authorization
 
-__Technologies Used__
+### Technologies Used
 
  Framework: Spring Boot <br>
  Database: MySQL <br>
  Security: Spring Security with JWT for authentication and encrypted password storage. <br>
  Build Tool: Maven <br>
 
-__Setup Instructions__
+## Setup Instructions
 
-Prerequisites
+__Prerequisites__
 
 Java 17 or above installed. <br>
 MySQL Database installed and running. <br>
@@ -61,14 +61,14 @@ mvn spring-boot:run
 
 Access the API at http://localhost:8080.
 
-__Key Endpoints__
+### Key Endpoints
 
 | HTTP Method   | Endpoint      | Description |
 | ------------- | ------------- | ----------- |
 | POST          | /enroll       | Enroll a new student. |
 | POST          | /login  | Login to the system. |
 
-__Security Features__
+### Security Features
 
 - Authentication:
 Implemented using JWT tokens, ensuring secure login and session management.<br>
