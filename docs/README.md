@@ -23,14 +23,15 @@ This is a sample image, to show how to add images to your page. To learn more op
 1. [Introduction](#introduction)
 2. [Scope](#scope)
 3. [Technical Highlights](#technical-highlights)
-4. [Group 17 Team](#team)
+4. [Group 17 Team](#group-17-team)
 5. [Links](#links)
 
 ---
 
 ## Introduction
 
-The Postgraduate Students Management System (PGSMS) is a comprehensive platform designed to manage the academic and administrative processes related to MPhil efficiently. and PhD. students in the Department of Computer Engineering at the University of Peradeniya. This system addresses the challenges associated with traditional, manual processes by introducing streamlined, automated workflows that enhance operational efficiency, improve communication, and ensure effective monitoring of students’ academic progress. <br>
+<p align= "justify">
+The Postgraduate Students Management System (PGSMS) is a comprehensive platform designed to manage the academic and administrative processes related to MPhil efficiently. and PhD. students in the Department of Computer Engineering at the University of Peradeniya. This system addresses the challenges associated with traditional, manual processes by introducing streamlined, automated workflows that enhance operational efficiency, improve communication, and ensure effective monitoring of students’ academic progress. </p><br>
 The system is tailored to meet the specific needs of postgraduate programs, focusing on the lifecycle of a student’s academic journey, from registration to graduation. 
 
 ![image](https://github.com/user-attachments/assets/665b9b81-106f-4871-8c9f-ccd065c82f12)
@@ -77,10 +78,10 @@ Email Integration: Configured with Gmail SMTP for real-time email notifications.
 
 
 ## Group 17 Team
-E/20/197, A.H.D. Kawya, e20197@eng.pdn.ac.lk
-E/20/211, K.W.I.T. Kumarasinghe, e20211@eng.pdn.ac.lk
-E/20/212, R.M.S.H. Kumarasinghe, e20212@eng.pdn.ac.lk
-E/20/242, G.A.I. Malinga, e20242@eng.pdn.ac.lk
+- E/20/197,  A.H.D. Kawya,           e20197@eng.pdn.ac.lk <br>
+- E/20/211,  K.W.I.T. Kumarasinghe,  e20211@eng.pdn.ac.lk <br>
+- E/20/212,  R.M.S.H. Kumarasinghe,  e20212@eng.pdn.ac.lk <br>
+- E/20/242,  G.A.I. Malinga,         e20242@eng.pdn.ac.lk <br>
 
 ## Links
 
