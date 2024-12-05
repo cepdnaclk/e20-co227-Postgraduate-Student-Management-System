@@ -23,7 +23,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 1. [Introduction](#introduction)
 2. [Scope](#scope)
 3. [Technical Highlights](#technical-highlights)
-4. [Team](#team)
+4. [Group 17 Team](#team)
 5. [Links](#links)
 
 ---
@@ -77,10 +77,10 @@ Email Integration: Configured with Gmail SMTP for real-time email notifications.
 
 
 ## Group 17 Team
--  E/20/197, Dasuni Kawya, [email](e20197@eng.pdn.ac.lk)
--  E/20/211, Ishan Kumarasinghe, [email](e20211@eng.pdn.ac.lk)
--  E/20/212, Sameera Kumarasinghe, [email](e20212@eng.pdn.ac.lk)
--  E/20/242, Imesh Malinga, [email](e20242@eng.pdn.ac.lk)
+E/20/197, A.H.D. Kawya, e20197@eng.pdn.ac.lk
+E/20/211, K.W.I.T. Kumarasinghe, e20211@eng.pdn.ac.lk
+E/20/212, R.M.S.H. Kumarasinghe, e20212@eng.pdn.ac.lk
+E/20/242, G.A.I. Malinga, e20242@eng.pdn.ac.lk
 
 ## Links
 
