@@ -70,10 +70,10 @@ Communication System
 
 ## Technical Highlights
 
-Backend: Developed using Spring Boot with REST API architecture, featuring JWT-based authentication and encrypted password storage.<br>
-Frontend: Built with Angular, providing a responsive and user-friendly interface.<br>
-Database: Managed with MySQL, ensuring efficient data storage and retrieval.<br>
-Email Integration: Configured with Gmail SMTP for real-time email notifications.<br>
+1. Backend: Developed using Spring Boot with REST API architecture, featuring JWT-based authentication and encrypted password storage.<br>
+2. Frontend: Built with Angular, providing a responsive and user-friendly interface.<br>
+3. Database: Managed with MySQL, ensuring efficient data storage and retrieval.<br>
+4. Email Integration: Configured with Gmail SMTP for real-time email notifications.<br>
 
 
 
